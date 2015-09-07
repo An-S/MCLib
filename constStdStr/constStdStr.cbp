@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="constStdStr" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="libDebug">
+				<Option output="../constStdStrDbg" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+			</Target>
+			<Target title="libRelease">
+				<Option output="../constStdStr" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+			</Target>
+			<Target title="selftest">
+				<Option output="constStdStr" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Linker>
+					<Add library="..\..\CLib(cc65)\libcutest-cc65_Dbg.lib" />
+					<Add library="..\..\CLib(cc65)\libCutestString-cc65Dbg.lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="AllWithTests" targets="libDebug;libRelease;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="alltests.c">
+			<Option compilerVar="CC" />
+			<Option target="selftest" />
+		</Unit>
+		<Unit filename="constStr_NULLuc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="constStr_TRUE.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="constStr_empty.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="constStr_falselc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="constStr_falseuc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+			<Option target="selftest" />
+		</Unit>
+		<Unit filename="trueStr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
