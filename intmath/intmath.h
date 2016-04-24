@@ -5,4 +5,6 @@ int imax(int x, int y);
 int imin(int x, int y);
 int lcd(int a, int b);
 
-#endif // INTMATH_H_INCLUDED
+/*INTMATH_H_INCLUDED*/
+#endif
+
