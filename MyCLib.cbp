@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MyCLib" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="MallocWrapper\;MallocWrapper\Sources\;MallocWrapper\Headers\;" />
+		<Build>
+			<Target title="MallocWrapper">
+				<Option output="../MyCLib" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="MallocWrapper2" targets="MallocWrapper;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="MallocWrapper/defaultMarkers.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MallocWrapper/Sources/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MallocWrapper/Sources/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc_alloclist.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MallocWrapper/Sources/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc_alloclistAccessFunctions.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MallocWrapper/Sources/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc_arraytypes.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MallocWrapper/Sources/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc_basicTests.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MallocWrapper/Sources/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc_blockheader.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MallocWrapper/Sources/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc_blockstructure.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MallocWrapper/Sources/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc_errorMessages.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MallocWrapper/Sources/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc_helperfunctions.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MallocWrapper/Sources/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc_helperfunctions.h">
+			<Option virtualFolder="MallocWrapper/Headers/" />
+		</Unit>
+		<Unit filename="MallocWrapper/imalloc_internal.h">
+			<Option virtualFolder="MallocWrapper/Headers/" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
