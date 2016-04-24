@@ -1,20 +1,19 @@
-#ifndef STD_HEAD_H
-#define STD_HEAD_H
+#ifndef STDHEADERS_H_INCLUDED
+#define STDHEADERS_H_INCLUDED
 
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
-#include <stdbool.h>
-#include <unistd.h>
 #include <stdint.h>
-
-#include <string.h>
-#include <errno.h>
-#include <limits.h>
+#include <stdbool.h>
+#include <stddef.h>
 #include <time.h>
+#include <stdarg.h>
+#include <string.h>
+//#include <conio.h>
 
-#include <conio.h>
+#include <windows.h>
+#include <windowsx.h>
+#include <wincon.h>
 
-#endif
-
+#endif // STDHEADERS_H_INCLUDED

@@ -1,1 +1,1 @@
-static char constStr_TRUE[] = "TRUE";
+char constStr_TRUE[] = "TRUE";

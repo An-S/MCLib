@@ -12,6 +12,7 @@
 
 	#define DEFAULTMAGIC "*_iMaL_loC*"
 	#define DEFAULTENDMARKER "*_ImaLEn_D*"
+
 	//Use strange spelling to make it nearly improbable that someone fills allocated memory with exactly the DEFAULTMAGIC
 
 	//	**********************************************************************

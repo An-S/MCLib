@@ -38,7 +38,7 @@ int imalloc_alloclistAddEntry(void* ptr){
 int imalloc_alloclistRemoveEntry(void* ptr){
 	unsigned int alloclistpos = checkalloclist(ptr);
 
-	if (~0 == alloclistpos){
+	if ((unsigned)~0 == alloclistpos){
 		if (returnAllocationCount() > 0){
 			imalloc_setError(IMALLOCERR_PTRNOTFOUNDINALLOCLIST);
 		}else{
@@ -59,7 +59,7 @@ int imalloc_alloclistRemoveEntry(void* ptr){
 
 int imalloc_alloclistUpdateEntry(void* oldptr, void* newptr){
 	unsigned int alloclistpos = checkalloclist(oldptr);//checkalloclist provides assert(ptr!=NULL) already
-	if (~0 == alloclistpos){ //If address not found in list -> error
+	if ((unsigned)~0 == alloclistpos){ //If address not found in list -> error
 		imalloc_setError(IMALLOCERR_PTRNOTFOUNDINALLOCLIST);
 		return EXIT_FAILURE;
 	};
