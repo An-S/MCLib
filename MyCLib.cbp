@@ -45,6 +45,7 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-g" />
 			<Add option="-Wall -std=c11" />
 		</Compiler>
 		<Unit filename="List/MCLib_List.h">
@@ -185,14 +186,20 @@
 			<Option virtualFolder="constStdStr/" />
 			<Option target="lib" />
 		</Unit>
-		<Unit filename="intmath/intmath.h">
+		<Unit filename="intmath/absdiff.c">
 			<Option compilerVar="CC" />
+			<Option virtualFolder="intmath/" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
 		</Unit>
-		<Unit filename="intmath/lcd.c">
+		<Unit filename="intmath/gcd.c">
 			<Option compilerVar="CC" />
 			<Option virtualFolder="intmath/" />
+			<Option target="lib" />
+			<Option target="testIntMath" />
+		</Unit>
+		<Unit filename="intmath/intmath.h">
+			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
 		</Unit>

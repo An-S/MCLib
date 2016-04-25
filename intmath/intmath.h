@@ -3,7 +3,8 @@
 
 int imax(int x, int y);
 int imin(int x, int y);
-int lcd(int a, int b);
+int gcd(int a, int b);
+unsigned int absdiff(int a, int b);
 
 /*INTMATH_H_INCLUDED*/
 #endif
