@@ -11,6 +11,8 @@
 #include <stdarg.h>
 #include <string.h>
 //#include <conio.h>
+#include <ctype.h>
+#include <limits.h>
 
 #include <windows.h>
 #include <windowsx.h>

@@ -203,6 +203,11 @@
 			<Option target="lib" />
 			<Option target="testIntMath" />
 		</Unit>
+		<Unit filename="intmath/lcm.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testIntMath" />
+		</Unit>
 		<Unit filename="intmath/max.c">
 			<Option compilerVar="CC" />
 			<Option virtualFolder="intmath/" />
@@ -242,6 +247,15 @@
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1" />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
