@@ -1,6 +1,8 @@
-#include "intmath.h"
+#include "MCLib.h"
 
-int lcd(int a, int b){
+unsigned int gcd(int a, int b){
+    a=abs(a);
+    b=abs(b);
     while(a!=0 && b!=0 ){
         if (a>b){
             a %= b;
@@ -8,5 +10,5 @@ int lcd(int a, int b){
             b %= a;
         }
     }
-    return a;
+    return a|b;
 }

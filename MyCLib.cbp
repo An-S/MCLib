@@ -42,9 +42,14 @@
 				<Option output="testIntMath" prefix_auto="1" extension_auto="1" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<ExtraCommands>
+					<Add after="testIntMath.exe" />
+					<Mode after="always" />
+				</ExtraCommands>
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-g" />
 			<Add option="-Wall -std=c11" />
 		</Compiler>
 		<Unit filename="List/MCLib_List.h">
@@ -185,14 +190,25 @@
 			<Option virtualFolder="constStdStr/" />
 			<Option target="lib" />
 		</Unit>
+		<Unit filename="intmath/absdiff.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="intmath/" />
+			<Option target="lib" />
+			<Option target="testIntMath" />
+		</Unit>
+		<Unit filename="intmath/gcd.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="intmath/" />
+			<Option target="lib" />
+			<Option target="testIntMath" />
+		</Unit>
 		<Unit filename="intmath/intmath.h">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
 		</Unit>
-		<Unit filename="intmath/lcd.c">
+		<Unit filename="intmath/lcm.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="intmath/" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
 		</Unit>
@@ -235,6 +251,15 @@
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1" />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
