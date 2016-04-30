@@ -42,6 +42,10 @@
 				<Option output="testIntMath" prefix_auto="1" extension_auto="1" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<ExtraCommands>
+					<Add after="testIntMath.exe" />
+					<Mode after="always" />
+				</ExtraCommands>
 			</Target>
 		</Build>
 		<Compiler>
