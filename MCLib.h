@@ -8,4 +8,9 @@
 #include "list/MCLib_List.h"
 #include "intmath/intmath.h"
 
+//typedef char[8] mychar;
+typedef char minWidthIntCharArray_t[INTFIELDWIDTH(sizeof(int))];
+typedef char minWidthHIntCharArray_t[INTFIELDWIDTH(sizeof(short int))];
+typedef char minWidthLIntCharArray_t[INTFIELDWIDTH(sizeof(long int))];
+
 #endif // MCLIB_H_INCLUDED

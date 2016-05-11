@@ -52,6 +52,10 @@
 			<Add option="-g" />
 			<Add option="-Wall -std=c11" />
 		</Compiler>
+		<Unit filename="Comparison/lessthan.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
 		<Unit filename="List/MCLib_List.h">
 			<Option target="lib" />
 			<Option target="testList" />
@@ -241,6 +245,10 @@
 			<Option compilerVar="CC" />
 			<Option virtualFolder="range/sources/" />
 			<Option target="lib" />
+		</Unit>
+		<Unit filename="range/chkRng.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="range/sources/" />
 		</Unit>
 		<Unit filename="stdheaders.h">
 			<Option target="MallocWrapper" />
