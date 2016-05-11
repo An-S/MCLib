@@ -1,0 +1,15 @@
+CC = gcc
+CC65 = cc65
+cflags = -O -c --std=c-11 -g -Wall
+cc65flags = -O -g -c
+ldflags =
+objects = digitsum.o
+main = digitsum
+
+%.o:%.c
+  $(CC) $(cflags) $@ -o $<
+  $(LD) $< -o $(main).exe
+  $(CC65) $(c65flags) $@ -o $<
+  $(LD65)  $< -o $(main).prg
+   
+all: digitsum

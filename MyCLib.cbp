@@ -5,7 +5,7 @@
 		<Option title="MyCLib" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="MallocWrapper\;MallocWrapper\Sources\;MallocWrapper\Headers\;range\;range\headers\;range\sources\;constStdStr\;WinAPI\;intmath\;" />
+		<Option virtualFolders="WinAPI\;" />
 		<Build>
 			<Target title="MallocWrapper">
 				<Option output="../MyCLib" prefix_auto="1" extension_auto="1" />
@@ -47,14 +47,24 @@
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
+			<Target title="testRange">
+				<Option output="testRange" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-g" />
 			<Add option="-Wall -std=c11" />
 		</Compiler>
+		<Unit filename="Comparison/comparison.h">
+			<Option target="lib" />
+			<Option target="testRange" />
+		</Unit>
 		<Unit filename="Comparison/lessthan.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
+			<Option target="testRange" />
 		</Unit>
 		<Unit filename="List/MCLib_List.h">
 			<Option target="lib" />
@@ -86,123 +96,101 @@
 		</Unit>
 		<Unit filename="MallocWrapper/defaultMarkers.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="MallocWrapper/Sources/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="MallocWrapper/Sources/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_alloclist.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="MallocWrapper/Sources/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_alloclistAccessFunctions.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="MallocWrapper/Sources/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_arraytypes.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="MallocWrapper/Sources/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_basicTests.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="MallocWrapper/Sources/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_blockheader.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="MallocWrapper/Sources/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_blockstructure.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="MallocWrapper/Sources/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_errorMessages.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="MallocWrapper/Sources/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_helperfunctions.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="MallocWrapper/Sources/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_helperfunctions.h">
-			<Option virtualFolder="MallocWrapper/Headers/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_internal.h">
-			<Option virtualFolder="MallocWrapper/Headers/" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="constStdStr/alltests.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="constStdStr/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="constStdStr/constStr_NULLuc.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="constStdStr/" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="constStdStr/constStr_TRUE.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="constStdStr/" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="constStdStr/constStr_empty.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="constStdStr/" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="constStdStr/constStr_falselc.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="constStdStr/" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="constStdStr/constStr_falseuc.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="constStdStr/" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="constStdStr/main.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="constStdStr/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="constStdStr/trueStr.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="constStdStr/" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="intmath/absdiff.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="intmath/" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
 		</Unit>
 		<Unit filename="intmath/gcd.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="intmath/" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
 		</Unit>
@@ -218,19 +206,16 @@
 		</Unit>
 		<Unit filename="intmath/max.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="intmath/" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
 		</Unit>
 		<Unit filename="intmath/min.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="intmath/" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
 		</Unit>
 		<Unit filename="intmath/testIntMath.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="intmath/" />
 			<Option target="testIntMath" />
 		</Unit>
 		<Unit filename="main.c">
@@ -238,17 +223,20 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="range/MCLib_Range.h">
-			<Option virtualFolder="range/headers/" />
 			<Option target="lib" />
+			<Option target="testRange" />
 		</Unit>
 		<Unit filename="range/chkIntRng.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="range/sources/" />
 			<Option target="lib" />
+			<Option target="testRange" />
 		</Unit>
 		<Unit filename="range/chkRng.c">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="range/sources/" />
+		</Unit>
+		<Unit filename="range/testRange.c">
+			<Option compilerVar="CC" />
+			<Option target="testRange" />
 		</Unit>
 		<Unit filename="stdheaders.h">
 			<Option target="MallocWrapper" />
