@@ -96,6 +96,41 @@ CUTEST(minTest){
     forEachTwoIntMinZeroMax(tc, testFnc_min);
 }
 
+bool intCmpFnc(const void* exp, const void* act, char *expectedStr, char *actualStr, size_t maxChars, CuString *str){
+    str; //just to omit unused param warning
+
+    //write ints into passed string buffers
+    snprintf(expectedStr, maxChars, "%d", *((int*)exp));
+    snprintf(actualStr, maxChars, "%d", *((int*)act));
+
+    return (*(int*)exp == *(int*)act);
+}
+
+bool CuAssertIntEquals_LineMsg(CuTest* tc, const char* file, unsigned int line, const char* message,
+	int expected, int actual)
+{
+	minWidthIntCharArray_t expectedStr; //reserve minimum field width capable of holding smallest int
+    minWidthIntCharArray_t actualStr;
+
+	return CuAssertGeneralEquals_LineMsg(tc, file, line, message, &expected, &actual,
+                                      expectedStr, actualStr, sizeof(expectedStr), intCmpFnc);
+}
+
+bool testFncGcd2(CuTest *tc, unsigned long int line, int a, int b, unsigned long int expected){
+    //return commonTwoIntTestFunction(tc, gcd, a, b, expected);
+
+    unsigned long int _gcd = gcd(a,b);
+    bool result;
+    printIntTestPair(a,b);
+    printf("->result: %u\n", _gcd);
+    result = CuAssertGeneralEquals_LineMsg(tc,__FILE__, line,  expected, _gcd);
+    if (result){
+        CuTestAppendMessage(tc, "\nTest failed: %s(%lu), using input values %d, %d",__FILE__, line, a, b);
+    }
+
+    return result;
+}
+
 bool testFncGcd(CuTest *tc, unsigned long int line, int a, int b, unsigned long int expected){
     //return commonTwoIntTestFunction(tc, gcd, a, b, expected);
 
