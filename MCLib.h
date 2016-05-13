@@ -8,7 +8,7 @@
 #include "list/MCLib_List.h"
 #include "intmath/intmath.h"
 #include "comparison/comparison.h"
-
+#include "constStdStr/MCLib_constStdStr.h"
 //typedef char[8] mychar;
 typedef char minWidthIntCharArray_t[INTFIELDWIDTH(sizeof(int))];
 typedef char minWidthHIntCharArray_t[INTFIELDWIDTH(sizeof(short int))];

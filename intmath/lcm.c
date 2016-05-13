@@ -27,6 +27,7 @@ unsigned long int lcm(int num1, int num2){
                 //difference to the previous value of num3 is a multiple of num1
                 num3 = num4+num1-r;
                 //secure against overflow and return error in that case
+                //num1 is >0 because of taking abs function before
                 if (num3 < num1){
                     return ULONG_MAX;
                 }

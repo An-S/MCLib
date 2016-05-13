@@ -1,2 +1,4 @@
-char constStr_NULL[] = "NULL";
+#include "MCLib.h"
+
+const char const constStr_NULL[] = "NULL";
 

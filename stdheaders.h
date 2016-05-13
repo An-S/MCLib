@@ -14,8 +14,10 @@
 #include <ctype.h>
 #include <limits.h>
 
-#include <windows.h>
-#include <windowsx.h>
-#include <wincon.h>
+#ifndef __CC65__
+    #include <windows.h>
+    #include <windowsx.h>
+    #include <wincon.h>
+#endif // __CC65__
 
 #endif // STDHEADERS_H_INCLUDED

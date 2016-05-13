@@ -1,2 +1,4 @@
-char constStr_false[] = "false";
+#include "MCLib.h"
+
+const char const constStr_false[] = "false";
 

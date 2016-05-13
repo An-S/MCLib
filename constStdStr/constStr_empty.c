@@ -1,2 +1,4 @@
-char constStr_empty[] = "empty";
+#include "MCLib.h"
+
+const char const constStr_empty[] = "empty";
 
