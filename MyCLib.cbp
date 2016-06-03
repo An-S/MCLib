@@ -37,11 +37,17 @@
 				<Option output="testList" prefix_auto="1" extension_auto="1" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Linker>
+					<Add library="libMCLib.a" />
+				</Linker>
 			</Target>
 			<Target title="testIntMath">
 				<Option output="testIntMath" prefix_auto="1" extension_auto="1" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Linker>
+					<Add library="libMCLib.a" />
+				</Linker>
 				<ExtraCommands>
 					<Add after="testIntMath.exe" />
 					<Mode after="always" />
@@ -51,17 +57,46 @@
 				<Option output="testRange" prefix_auto="1" extension_auto="1" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Linker>
+					<Add library="libMCLib.a" />
+				</Linker>
+			</Target>
+			<Target title="testStrings">
+				<Option output="testStrings" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Linker>
+					<Add library="libMCLib.a" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-g" />
 			<Add option="-Wall -std=c11" />
 		</Compiler>
+		<Linker>
+			<Add directory="C:/Users/MyAcer/Documents/Programmieren/EigeneCProgramme/MyCLib/" />
+		</Linker>
 		<Unit filename="Comparison/comparison.h">
 			<Option target="lib" />
 			<Option target="testRange" />
 		</Unit>
 		<Unit filename="Comparison/lessthan.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testRange" />
+		</Unit>
+		<Unit filename="Comparison/lessthanOrEq.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testRange" />
+		</Unit>
+		<Unit filename="Comparison/lessthanOrEqStr.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testRange" />
+		</Unit>
+		<Unit filename="Comparison/lessthanStr.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testRange" />
@@ -152,6 +187,9 @@
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 		</Unit>
+		<Unit filename="constStdStr/MCLib_constStdStr.h">
+			<Option target="lib" />
+		</Unit>
 		<Unit filename="constStdStr/alltests.c">
 			<Option compilerVar="CC" />
 			<Option target="&lt;{~None~}&gt;" />
@@ -233,6 +271,11 @@
 		</Unit>
 		<Unit filename="range/chkRng.c">
 			<Option compilerVar="CC" />
+			<Option target="MallocWrapper" />
+			<Option target="lib" />
+			<Option target="testList" />
+			<Option target="testIntMath" />
+			<Option target="testRange" />
 		</Unit>
 		<Unit filename="range/testRange.c">
 			<Option compilerVar="CC" />
@@ -241,6 +284,20 @@
 		<Unit filename="stdheaders.h">
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+		</Unit>
+		<Unit filename="strings/MCLib_getFieldwidthFromFormatString.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+		</Unit>
+		<Unit filename="strings/McLib_strings.h">
+			<Option target="lib" />
+			<Option target="testStrings" />
+		</Unit>
+		<Unit filename="strings/testStrings.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
 		</Unit>
 		<Extensions>
 			<code_completion />
