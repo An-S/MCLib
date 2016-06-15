@@ -68,6 +68,10 @@
 				<Linker>
 					<Add library="libMCLib.a" />
 				</Linker>
+				<ExtraCommands>
+					<Add after="cmd /c teststrings.exe" />
+					<Mode after="always" />
+				</ExtraCommands>
 			</Target>
 		</Build>
 		<Compiler>
@@ -255,6 +259,10 @@
 		<Unit filename="intmath/testIntMath.c">
 			<Option compilerVar="CC" />
 			<Option target="testIntMath" />
+		</Unit>
+		<Unit filename="io/countCallsAndSelectChar.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
 		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
