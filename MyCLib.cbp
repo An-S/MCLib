@@ -69,10 +69,18 @@
 					<Add library="libMCLib.a" />
 				</Linker>
 			</Target>
+			<Target title="testCounter">
+				<Option output="testCounter" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Linker>
+					<Add library="libMCLib.a" />
+				</Linker>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-g" />
-			<Add option="-Wall -std=c11" />
+			<Add option="-Wall -std=c11 -mconsole" />
 		</Compiler>
 		<Linker>
 			<Add directory="C:/Users/MyAcer/Documents/Programmieren/EigeneCProgramme/MyCLib/" />
@@ -100,6 +108,15 @@
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testRange" />
+		</Unit>
+		<Unit filename="Counter/Counter.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testCounter" />
+		</Unit>
+		<Unit filename="Counter/Counter.h">
+			<Option target="lib" />
+			<Option target="testCounter" />
 		</Unit>
 		<Unit filename="List/MCLib_List.h">
 			<Option target="lib" />
