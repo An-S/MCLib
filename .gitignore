@@ -1,0 +1,16 @@
+*.html
+*.bak
+*.a
+*.conf
+*.css
+*.d
+*.exe
+*.i
+*.depend
+*.js
+*.o
+*.png
+*.s
+*.layout
+*.db
+*.prg

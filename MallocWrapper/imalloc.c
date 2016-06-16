@@ -54,7 +54,7 @@ void* irealloc(void* ptr, size_t size){
 	if (NULL != ptr){
 		sptr = (uint8_t*)ptr-sizeof(blockheader_t);
 		unsigned int alloclistpos = checkalloclist(sptr);
-		if (~0 == alloclistpos){
+		if ((unsigned)~0 == alloclistpos){
 			imalloc_setError(IMALLOCERR_PTRNOTFOUNDINALLOCLIST);
 			return NULL;
 		};

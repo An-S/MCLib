@@ -79,10 +79,14 @@
 				<Option compiler="gcc" />
 				<Linker>
 					<Add library="libMCLib.a" />
+					<Add library="../CuTest/libcutest.a" />
+					<Add library="../CuTest/CuAlloc/libCuAlloc.a" />
+					<Add library="../CuTest/CuString/libCutestString-cc65.a" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-Wall" />
 			<Add option="-g" />
 			<Add option="-Wall -std=c11 -mconsole" />
 		</Compiler>
@@ -119,7 +123,16 @@
 			<Option target="testCounter" />
 		</Unit>
 		<Unit filename="Counter/Counter.h">
+			<Option compilerVar="CC" />
 			<Option target="lib" />
+			<Option target="testCounter" />
+		</Unit>
+		<Unit filename="Counter/Counter_internal.h">
+			<Option compilerVar="CC" />
+			<Option target="testCounter" />
+		</Unit>
+		<Unit filename="Counter/testCounter.c">
+			<Option compilerVar="CC" />
 			<Option target="testCounter" />
 		</Unit>
 		<Unit filename="List/MCLib_List.h">
