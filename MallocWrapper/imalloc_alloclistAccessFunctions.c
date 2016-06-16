@@ -11,7 +11,7 @@ unsigned int decreaseAllocationCount(void);
 int imalloc_alloclistMoveEndingSubArrayFromTo(unsigned int from, unsigned int to);
 
 bool imalloc_alloclistCheckIndex(unsigned int at){
-	assert (~0 != at);//assert that indicator for invalid pos is not passed by accident
+	assert ((unsigned)~0 != at);//assert that indicator for invalid pos is not passed by accident
 	return at < n_allocations;
 }
 

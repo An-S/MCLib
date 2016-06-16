@@ -78,17 +78,17 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Linker>
-					<Add library="libMCLib.a" />
 					<Add library="../CuTest/libcutest.a" />
 					<Add library="../CuTest/CuAlloc/libCuAlloc.a" />
 					<Add library="../CuTest/CuString/libCutestString-cc65.a" />
+					<Add library="libMCLib.a" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-g" />
-			<Add option="-Wall -std=c11 -mconsole" />
+			<Add option="-Wall -std=c11 -mconsole -fplan9-extensions" />
 		</Compiler>
 		<Linker>
 			<Add directory="C:/Users/MyAcer/Documents/Programmieren/EigeneCProgramme/MyCLib/" />
@@ -334,8 +334,14 @@
 		</Unit>
 		<Unit filename="strings/testStrings.c">
 			<Option compilerVar="CC" />
-			<Option target="lib" />
 			<Option target="testStrings" />
+		</Unit>
+		<Unit filename="trigFunctions/createSin.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="trigFunctions/trigFunctions.h">
+			<Option target="lib" />
 		</Unit>
 		<Extensions>
 			<code_completion />

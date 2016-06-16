@@ -11,6 +11,8 @@
 #include "constStdStr/MCLib_constStdStr.h"
 #include "strings/MCLib_strings.h"
 #include "counter/counter.h"
+#include "trigFunctions/trigFunctions.h"
+
 //typedef char[8] mychar;
 typedef char minWidthIntCharArray_t[INTFIELDWIDTH(sizeof(int))];
 typedef char minWidthHIntCharArray_t[INTFIELDWIDTH(sizeof(short int))];

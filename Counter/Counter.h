@@ -1,6 +1,8 @@
 #ifndef COUNTER_H_INCLUDED
 #define COUNTER_H_INCLUDED
 
+#include <stdheaders.h>
+
 typedef int MCLib_counterValue_t;
 typedef struct MCLib_counter_tag MCLib_counter_t;
 typedef enum {
