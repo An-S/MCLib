@@ -88,7 +88,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-g" />
-			<Add option="-Wall -std=c11 -mconsole -fplan9-extensions" />
+			<Add option="-Wall -std=gnu11 -mconsole -fplan9-extensions" />
 		</Compiler>
 		<Linker>
 			<Add directory="C:/Users/MyAcer/Documents/Programmieren/EigeneCProgramme/MyCLib/" />
@@ -341,6 +341,7 @@
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="trigFunctions/trigFunctions.h">
+			<Option compilerVar="CC" />
 			<Option target="lib" />
 		</Unit>
 		<Extensions>
