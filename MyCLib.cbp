@@ -139,6 +139,16 @@
 			<Option target="lib" />
 			<Option target="testList" />
 		</Unit>
+		<Unit filename="List/fprintIntElem.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testList" />
+		</Unit>
+		<Unit filename="List/fprintlist.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testList" />
+		</Unit>
 		<Unit filename="List/getUINT16Elem.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
@@ -149,7 +159,37 @@
 			<Option target="lib" />
 			<Option target="testList" />
 		</Unit>
+		<Unit filename="List/printCharElem.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testList" />
+		</Unit>
+		<Unit filename="List/printIntElem.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testList" />
+		</Unit>
+		<Unit filename="List/printStringElem.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testList" />
+		</Unit>
+		<Unit filename="List/printUInt16Elem.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testList" />
+		</Unit>
+		<Unit filename="List/printUInt8Elem.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testList" />
+		</Unit>
 		<Unit filename="List/printlist.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testList" />
+		</Unit>
+		<Unit filename="List/rememberPointer.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
