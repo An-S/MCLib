@@ -13,6 +13,7 @@
 //#include <conio.h>*/
 #include <ctype.h>
 #include <limits.h>
+#include <errno.h>
 
 //#ifndef __CC65__
 #ifdef __WINDOWS__

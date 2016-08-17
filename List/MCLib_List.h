@@ -7,13 +7,24 @@
 typedef enum {FGVElem_GET, FGVElem_PRINT, FGVElem_INIT } FGVElem_OP;
 //typedef void FGV_ListElem_UINT8();
 //typedef *FGVELemFnc FGVElemFnc_Ptr;
-typedef uint16_t getElementFnc_t(void** elem);
+typedef void *printElemFnc_t(char *format, void* elem);
+typedef void *fprintElemFnc_t(FILE *file, char *format, void* elem);
+typedef void *getElementFnc_t(void* list);
 typedef getElementFnc_t *getElementFnc_Ptr;
 
-uint16_t getuint8(void **byte);
-uint16_t getuint16(void **word);
+void *getuint8(void *bytelist);
+//void *getuint16(void *wordlist);
+void *MCLib_printIntElem(char *format, void *elem);
+void *MCLib_printCharElem(char *format, void *elem);
+void *MCLib_printStringElem(char *format, void *elem);
+void *MCLib_printUInt8Elem(char *format, void *elem);
+void *MCLib_printUInt16Elem(char *format, void *elem);
+void *MCLib_fprintIntElem(FILE *file, char *format, void *elem);
 
-//int printList(char* format, void *list, getElementFnc_Ptr getElem, size_t n, size_t perLine);
+int MCLib_printList(char* format, void *list, printElemFnc_t *printElemFnc, size_t n, size_t perLine);
+int MCLib_fprintList(FILE *file, char* format, void *list, fprintElemFnc_t *fprintElemFnc, size_t n, size_t perLine);
 
+//internal functions
+void *rememberPointer(void *ptr, void **store);
 
 #endif // MCLIB_LIST_H_INCLUDED

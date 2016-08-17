@@ -33,10 +33,14 @@ uint8_t FGV_ListElem_UINT8(FGVElem_OP op, ...){
     return *ptr;
 }
 
-uint16_t getuint8(void **byte)
+void *getuint8(void *list)
 {
-    uint8_t tByte = (uint8_t)(*(uint8_t*)*byte);
-    uint8_t **ptr = (uint8_t**)byte;
-    ++(*ptr);
-    return tByte;
+    uint8_t *list_local;
+
+    //init local pointer to start of list, if argument given
+    if (list){
+        list_local = list;
+        return 0;
+    }
+    return list_local++;
 }
