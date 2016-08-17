@@ -14,10 +14,12 @@
 #include <ctype.h>
 #include <limits.h>
 
-#ifndef __CC65__
+//#ifndef __CC65__
+#ifdef __WINDOWS__
     #include <windows.h>
     #include <windowsx.h>
     #include <wincon.h>
-#endif // __CC65__
+#endif
+//#endif // __CC65__
 
 #endif // STDHEADERS_H_INCLUDED
