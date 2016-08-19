@@ -1,4 +1,4 @@
-#include "..\MCLib.h"
+#include "../MCLib.h"
 
 void testfunc();
 void testfunc(int a, int b){
