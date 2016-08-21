@@ -1,7 +1,7 @@
 #ifndef MCLIB_LIST_H_INCLUDED
 #define MCLIB_LIST_H_INCLUDED
 
-#include "..\MCLib.h"
+#include "../MCLib.h"
 #include <stdarg.h>
 
 typedef enum {FGVElem_GET, FGVElem_PRINT, FGVElem_INIT } FGVElem_OP;

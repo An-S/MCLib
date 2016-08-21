@@ -4,14 +4,14 @@
 #include <stdheaders.h>
 #include <cmacros.h>
 #include "MallocWrapper/imalloc_internal.h"
-#include "range/MCLib_range.h"
-#include "list/MCLib_List.h"
+#include "Range/MCLib_Range.h"
+#include "List/MCLib_List.h"
 #include "intmath/intmath.h"
-#include "comparison/comparison.h"
+#include "Comparison/comparison.h"
 #include "constStdStr/MCLib_constStdStr.h"
-#include "strings/MCLib_strings.h"
-#include "counter/counter.h"
-#include "trigFunctions/trigFunctions.h"
+#include "Strings/MCLib_Strings.h"
+#include "Counter/Counter.h"
+#include "TrigFunctions/MCLib_TrigFunctions.h"
 
 //typedef char[8] mychar;
 typedef char minWidthIntCharArray_t[INTFIELDWIDTH(sizeof(int))];

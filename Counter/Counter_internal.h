@@ -1,7 +1,7 @@
 #ifndef COUNTER_INTERNAL_H_INCLUDED
 #define COUNTER_INTERNAL_H_INCLUDED
 
-#include "counter.h"
+#include "Counter.h"
 
 
 typedef struct MCLib_counter_tag{
