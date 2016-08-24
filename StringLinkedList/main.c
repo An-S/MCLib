@@ -10,25 +10,13 @@
 // included in the resulting library.
 
 // A function adding two integers and returning the result
+#include <stdheaders.h>
 #include "StringLinkedList_internal.h"
 
 int main(void){
-    stringlist_Head_t *list = stringlist_Create();
+    stringlist_Head_t *list = stringlist_create();
 
     printNumberOfAllocations();
-
-    stringlist_AddListEntry("first");
-    printNumberOfAllocations();
-    stringlist_AddListEntry("second");
-    printNumberOfAllocations();
-    stringlist_AddListEntry("third");
-    printNumberOfAllocations();
-    stringlist_AddListEntry("fourth");
-    printNumberOfAllocations();
-    stringlist_OutputAllEntries();
-    stringlist_Free();
-    printNumberOfAllocations();
-
 
     stringlist_addListEntry("fifth", list);
     printNumberOfAllocations();
@@ -39,6 +27,15 @@ int main(void){
     stringlist_addListEntry("eighth", list);
     printNumberOfAllocations();
     stringlist_outputAllEntries(list);
+
+    stringlist_addListEntry("ninth", list);
+    printNumberOfAllocations();
+    stringlist_outputAllEntries(list);
+
+    stringlist_removeListEntry(list);
+    printNumberOfAllocations();
+    stringlist_outputAllEntries(list);
+
     stringlist_free(list);
     printNumberOfAllocations();
 	return EXIT_SUCCESS;

@@ -1,14 +1,6 @@
 #ifndef STRINGLINKEDLIST_INTERNAL_H_INCLUDED
 #define STRINGLINKEDLIST_INTERNAL_H_INCLUDED
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <assert.h>
-#include <string.h>
-#include <stddef.h>
-#include <stdint.h>
-#include <stdbool.h>
-
 #include <MallocWrapper\imalloc.h>
 #include <MallocWrapper\imalloc_helperfunctions.h>
 
