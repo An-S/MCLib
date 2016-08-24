@@ -13,5 +13,33 @@
 #include "StringLinkedList_internal.h"
 
 int main(void){
+    stringlist_Head_t *list = stringlist_Create();
+
+    printNumberOfAllocations();
+
+    stringlist_AddListEntry("first");
+    printNumberOfAllocations();
+    stringlist_AddListEntry("second");
+    printNumberOfAllocations();
+    stringlist_AddListEntry("third");
+    printNumberOfAllocations();
+    stringlist_AddListEntry("fourth");
+    printNumberOfAllocations();
+    stringlist_OutputAllEntries();
+    stringlist_Free();
+    printNumberOfAllocations();
+
+
+    stringlist_addListEntry("fifth", list);
+    printNumberOfAllocations();
+    stringlist_addListEntry("sixth", list);
+    printNumberOfAllocations();
+    stringlist_addListEntry("seventh", list);
+    printNumberOfAllocations();
+    stringlist_addListEntry("eighth", list);
+    printNumberOfAllocations();
+    stringlist_outputAllEntries(list);
+    stringlist_free(list);
+    printNumberOfAllocations();
 	return EXIT_SUCCESS;
 }

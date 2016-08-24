@@ -18,7 +18,7 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add library="..\libMallocWrapperDbg.a" />
+					<Add library="../libMallocWrapperDbg.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -34,13 +34,24 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="..\libMallocWrapper.a" />
+					<Add library="../libMallocWrapper.a" />
 				</Linker>
+			</Target>
+			<Target title="test">
+				<Option output="StringLinkedList" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add directory="C:/Users/Stefan/Documents/Programmieren/EigeneCProgramme/MyCLib" />
 		</Compiler>
+		<Linker>
+			<Add library="../libMallocWrapperDbg.a" />
+		</Linker>
 		<Unit filename="StringLinkedList.c">
 			<Option compilerVar="CC" />
 		</Unit>
