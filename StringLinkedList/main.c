@@ -12,12 +12,31 @@
 // A function adding two integers and returning the result
 #include <stdheaders.h>
 #include "StringLinkedList_internal.h"
+#include <CuTest.h>
+
+CUTEST(testCreate){
+    stringlist_Head_t *head = stringlist_create();
+    CuAssertIntEquals(tc, head->elemCnt, 0);
+
+}
+
+CuSuite *getSuite(void){
+    CUSUITE_OPEN(suite);
+    CUTEST_ADD(suite, testCreate);
+}
 
 int main(void){
     stringlist_Head_t *list = stringlist_create();
 
     printNumberOfAllocations();
-
+    stringlist_addListEntry("first", list);
+    printNumberOfAllocations();
+    stringlist_addListEntry("second", list);
+    printNumberOfAllocations();
+    stringlist_addListEntry("third", list);
+    printNumberOfAllocations();
+    stringlist_addListEntry("fourth", list);
+    printNumberOfAllocations();
     stringlist_addListEntry("fifth", list);
     printNumberOfAllocations();
     stringlist_addListEntry("sixth", list);
@@ -32,7 +51,10 @@ int main(void){
     printNumberOfAllocations();
     stringlist_outputAllEntries(list);
 
-    stringlist_removeListEntry(list);
+    stringlist_removeLastEntry(list);
+    printNumberOfAllocations();
+    stringlist_outputAllEntries(list);
+    stringlist_removeFirstEntry(list);
     printNumberOfAllocations();
     stringlist_outputAllEntries(list);
 
