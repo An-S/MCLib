@@ -20,6 +20,19 @@ bool checkPtrsNULL(CuTest *tc, stringlist_SingleEntry_t *e){
             CuAssertPtrNull(tc, e->prev);
 }
 
+CUTEST(addListEntry){
+	static char first[] = "first";
+
+	stringlist_Head_t *head = stringlist_create();
+    stringlist_addListEntry(first, head);
+
+    CuAssertIntEquals(tc, 1, head->elemCnt);
+    CuAssertPtrEquals(tc, first, head->first->entry);
+    CuAssertPtrNull(tc, head->first->next);
+	CuAssertPtrNull(tc, head->first->prev);
+
+}
+
 CUTEST(create){
     stringlist_Head_t *head = stringlist_create();
     CuAssertIntEquals(tc, head->elemCnt, 0);
