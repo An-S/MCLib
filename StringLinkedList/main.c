@@ -17,7 +17,8 @@
 CUTEST(testCreate){
     stringlist_Head_t *head = stringlist_create();
     CuAssertIntEquals(tc, head->elemCnt, 0);
-
+    CuAssertPtrNotNull(tc, head->first);
+    CuAssertIntEquals(tc, head->last, 0);
 }
 
 CuSuite *getSuite(void){
