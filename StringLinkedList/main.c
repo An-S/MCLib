@@ -14,21 +14,39 @@
 #include "StringLinkedList_internal.h"
 #include <CuTest.h>
 
-CUTEST(testCreate){
+bool checkPtrsNULL(CuTest *tc, stringlist_SingleEntry_t *e){
+    return	CuAssertPtrNull(tc, e->entry) ||
+			CuAssertPtrNull(tc, e->next) ||
+            CuAssertPtrNull(tc, e->prev);
+}
+
+CUTEST(create){
     stringlist_Head_t *head = stringlist_create();
     CuAssertIntEquals(tc, head->elemCnt, 0);
     CuAssertPtrNotNull(tc, head->first);
-    CuAssertIntEquals(tc, head->last, 0);
+    CuAssertPtrEquals(tc, head->last, head->first);
+    CuAssertIntEquals(tc, false, checkPtrsNULL(tc, head->first));
 }
 
-CuSuite *getSuite(void){
+CUTEST(initEntry){
+    static stringlist_SingleEntry_t e = {(void*)1,(void*)2,(void*)3};
+    stringlist_initEntry(&e);
+    CuAssertIntEquals(tc, false, checkPtrsNULL(tc, &e));
+}
+
+runSuite1(void){
     CUSUITE_OPEN(suite);
-    CUTEST_ADD(suite, testCreate);
+
+    CUTEST_ADD(suite, create);
+    CUTEST_ADD(suite, initEntry);
+
+    CuSuiteRun(suite);
+    CuSuiteDetails(suite, stdout);
 }
 
 int main(void){
     stringlist_Head_t *list = stringlist_create();
-
+    runSuite1();
     printNumberOfAllocations();
     stringlist_addListEntry("first", list);
     printNumberOfAllocations();

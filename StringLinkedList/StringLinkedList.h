@@ -12,6 +12,6 @@ int stringlist_removeLastEntry(stringlist_Head_t *head);
 int stringlist_removeFirstEntry(stringlist_Head_t *head);
 int stringlist_outputAllEntries(stringlist_Head_t *list);
 int stringlist_free(stringlist_Head_t *list);
-stringlist_Head_t *stringlist_Create(void);
+stringlist_Head_t *stringlist_create(void);
 
 #endif // STRINGLINKEDLIST_H_INCLUDED
