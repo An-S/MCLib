@@ -22,13 +22,20 @@ bool checkPtrsNULL(CuTest *tc, stringlist_SingleEntry_t *e){
 
 CUTEST(addListEntry){
 	static char first[] = "first";
-
+	//this test consist of the following:
+	//create a list header and an entry
+	//check, if string is copied correctly to the list entry
+	//check, if elemCnt is increased correctly as entries are added
+	//however because the add function creates also a new reserve element this has to be checked, too
+	//so check, if next üpointer points to reserve element at end of list
+	//check, if reserve element is cleared correctly with NULL ptrs except the prev pntr
 	stringlist_Head_t *head = stringlist_create();
     stringlist_addListEntry(first, head);
 
     CuAssertIntEquals(tc, 1, head->elemCnt);
-    CuAssertPtrEquals(tc, first, head->first->entry);
-    CuAssertPtrNull(tc, head->first->next);
+    CuAssertIntEquals(tc, 0, strcmp(head->first->entry, first));
+    CuAssertPtrEquals(tc, head->first->next, head->last);
+	CuAssertPtrEquals(tc, head->first->next->prev, head->first);
 	CuAssertPtrNull(tc, head->first->prev);
 
 }
@@ -52,6 +59,7 @@ runSuite1(void){
 
     CUTEST_ADD(suite, create);
     CUTEST_ADD(suite, initEntry);
+	CUTEST_ADD(suite, addListEntry);
 
     CuSuiteRun(suite);
     CuSuiteDetails(suite, stdout);
@@ -59,7 +67,7 @@ runSuite1(void){
 
 int main(void){
     stringlist_Head_t *list = stringlist_create();
-    runSuite1();
+
     printNumberOfAllocations();
     stringlist_addListEntry("first", list);
     printNumberOfAllocations();
@@ -92,5 +100,8 @@ int main(void){
 
     stringlist_free(list);
     printNumberOfAllocations();
+
+
+    runSuite1();
 	return EXIT_SUCCESS;
 }
