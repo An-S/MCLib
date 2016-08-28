@@ -50,8 +50,12 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="preprocess">
-				<Option type="4" />
+				<Option output="pre" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="C:/Users/User/Documents/Programmieren/EigeneCProgramme/MyCLib/StringLinkedList/.objs" />
+				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-Wall" />
 					<Add option="-g" />
@@ -89,6 +93,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/stringlist_removeStart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="testsrc/assertHeadOK.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

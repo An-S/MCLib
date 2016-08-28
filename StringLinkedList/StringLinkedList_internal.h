@@ -30,14 +30,8 @@ typedef struct stringlist_Head_tag{
 }stringlist_Head_t;
 
 int stringlist_initEntry(stringlist_SingleEntry_t *sle);
+bool assertHeadOK(stringlist_Head_t *head);
 
-
-#define assertValidList(head) assert( ((head) -> last) ); /*
-		*/ assert ( (head) -> first); \
-		assert ( (head) -> last -> next == NULL ); /*
-		*/ /*assert that entry points to stringlist_Last element in list*/ /*
-		*/ assert ( (head) -> last -> entry == NULL ); /*
-		*/ /*assert that entry points to reserve element with NULL ptr*/ /*
-		*/ assert ( (head) -> last -> prev ? (head)->last->prev->next == (head)->last:true)
+#define assertValidList(head) assert(!assertHeadOK(head))
 
 #endif // STRINGLINKEDLIST_INTERNAL_H_INCLUDED
