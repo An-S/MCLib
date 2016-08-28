@@ -5,6 +5,8 @@
 #include <MallocWrapper\imalloc_helperfunctions.h>
 
 #include <ModuleTestSupportLib\ModuleTestSupportLib.h>
+
+#include <MCLib.h>
 #include "StringLinkedList.h"
 
 /** \brief typedef for elements of linked list
@@ -28,5 +30,14 @@ typedef struct stringlist_Head_tag{
 }stringlist_Head_t;
 
 int stringlist_initEntry(stringlist_SingleEntry_t *sle);
+
+
+#define assertValidList(head) assert( ((head) -> last) ); /*
+		*/ assert ( (head) -> first); \
+		assert ( (head) -> last -> next == NULL ); /*
+		*/ /*assert that entry points to stringlist_Last element in list*/ /*
+		*/ assert ( (head) -> last -> entry == NULL ); /*
+		*/ /*assert that entry points to reserve element with NULL ptr*/ /*
+		*/ assert ( (head) -> last -> prev ? (head)->last->prev->next == (head)->last:true)
 
 #endif // STRINGLINKEDLIST_INTERNAL_H_INCLUDED

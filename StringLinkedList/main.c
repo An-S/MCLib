@@ -20,30 +20,74 @@ bool checkPtrsNULL(CuTest *tc, stringlist_SingleEntry_t *e){
             CuAssertPtrNull(tc, e->prev);
 }
 
+bool checkReserveEntry(CuTest *tc, stringlist_SingleEntry_t *e){
+    return	//checks if pointer to string is init correctly to NULL in reserve
+			CuAssertPtrNull(tc, e->entry) ||
+			//checks, if next pointer in reserve is set to NULL correctly
+			CuAssertPtrNull(tc, e->next) ||
+			//checks, if atleast prev pointer of reserve point so some memory location and is not NULL
+            CuAssertPtrNotNull(tc, e->prev);
+}
+
 bool addListEntry(CuTest *tc, stringlist_Head_t *head, char *string){
 	size_t elemCnt = head->elemCnt;
+	stringlist_SingleEntry_t *beforelast = head->last;
 
+	//adds element to list
 	stringlist_addListEntry(string, head);
-
-	return	CuAssertIntEquals(tc, elemCnt+1, head->elemCnt) ||
-			CuAssertIntEquals(tc, 0, strcmp(string, head->first->entry) ) ||
-			CuAssertPtrNull(tc, head->first->next) ||
-			CuAssertPtrNull(tc, head->first->prev);
+	if (!string){
+		//if no string given, set string pointer to "NULL" string.
+		string = (char*)constStr_NULL;
+	}
+	stringlist_addListEntry(string, (stringlist_Head_t *) 1234);
+	return	//checks, if elemCnt is increased correctly on adding elements
+			CuAssertIntEquals(tc, elemCnt+1, head->elemCnt) ||
+			//checks, if pointer to string is set correctly
+			CuAssertIntEquals(tc, 0, strcmp(string, beforelast->entry) ) ||
+			//checks, if reserve entry's prev pointer points to "beforelast"
+			CuAssertPtrEquals(tc, beforelast, head->last->prev) ||
+			//checks, if reserve entry is initialized correctly
+			checkReserveEntry(tc, beforelast->next) ||
+			//checks, if beforelast's next pointer points to reserve
+			CuAssertPtrEquals(tc, beforelast->next, head->last);
 }
 
 CUTEST(addListEntry){
-	static char first[] = "first";
+	static char first[] = "first", name[] = "000";
+	size_t N = 50,i;
 
 	stringlist_Head_t *head = stringlist_create();
+	//tests, if creation of first element succeeds
     CuAssertFalse(tc, addListEntry(tc, head, first));
+    //tests, if contruction of element given NULL pointer instead of string -> succeeds
+	CuAssertFalse(tc, addListEntry(tc, head, NULL));
+
+	//tests, if creation of a certain amount of elements succeeds
+	for (i=N; i!=0; --i){
+		snprintf(name, 3, "%d", i);
+		CuAssertFalse(tc, addListEntry(tc, head, name));
+	}
+	//frees resources
+	stringlist_free(head);
+	//tests, if all resources were freed correctly
+	CuAssertIntEquals(tc, 0, returnAllocationCount());
 }
 
 CUTEST(create){
+	//creates new header for linked list
     stringlist_Head_t *head = stringlist_create();
+    //checks, if elemCnt initially zero
     CuAssertIntEquals(tc, head->elemCnt, 0);
+    //checks, if head->first set to reserve element
     CuAssertPtrNotNull(tc, head->first);
+    //checks, if last and first element are the same (only one reserve element available)
     CuAssertPtrEquals(tc, head->last, head->first);
-    CuAssertIntEquals(tc, false, checkPtrsNULL(tc, head->first));
+    //checks initialization of reserve element
+    CuAssertFalse(tc, checkPtrsNULL(tc, head->first));
+    //frees resources
+    stringlist_free(head);
+    //tests, if all resources were freed correctly
+    CuAssertIntEquals(tc, 0, returnAllocationCount());
 }
 
 CUTEST(initEntry){
@@ -65,39 +109,8 @@ int runSuite1(void){
 }
 
 int main(void){
-    stringlist_Head_t *list = stringlist_create();
-    runSuite1();
-    printNumberOfAllocations();
-    stringlist_addListEntry("first", list);
-    printNumberOfAllocations();
-    stringlist_addListEntry("second", list);
-    printNumberOfAllocations();
-    stringlist_addListEntry("third", list);
-    printNumberOfAllocations();
-    stringlist_addListEntry("fourth", list);
-    printNumberOfAllocations();
-    stringlist_addListEntry("fifth", list);
-    printNumberOfAllocations();
-    stringlist_addListEntry("sixth", list);
-    printNumberOfAllocations();
-    stringlist_addListEntry("seventh", list);
-    printNumberOfAllocations();
-    stringlist_addListEntry("eighth", list);
-    printNumberOfAllocations();
-    stringlist_outputAllEntries(list);
+    size_t fails = runSuite1();
 
-    stringlist_addListEntry("ninth", list);
-    printNumberOfAllocations();
-    stringlist_outputAllEntries(list);
 
-    stringlist_removeLastEntry(list);
-    printNumberOfAllocations();
-    stringlist_outputAllEntries(list);
-    stringlist_removeFirstEntry(list);
-    printNumberOfAllocations();
-    stringlist_outputAllEntries(list);
-
-    stringlist_free(list);
-    printNumberOfAllocations();
-	return EXIT_SUCCESS;
+	return fails;
 }
