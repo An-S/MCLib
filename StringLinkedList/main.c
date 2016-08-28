@@ -20,17 +20,22 @@ bool checkPtrsNULL(CuTest *tc, stringlist_SingleEntry_t *e){
             CuAssertPtrNull(tc, e->prev);
 }
 
+bool addListEntry(CuTest *tc, stringlist_Head_t *head, char *string){
+	size_t elemCnt = head->elemCnt;
+
+	stringlist_addListEntry(string, head);
+
+	return	CuAssertIntEquals(tc, elemCnt+1, head->elemCnt) ||
+			CuAssertIntEquals(tc, 0, strcmp(string, head->first->entry) ) ||
+			CuAssertPtrNull(tc, head->first->next) ||
+			CuAssertPtrNull(tc, head->first->prev);
+}
+
 CUTEST(addListEntry){
 	static char first[] = "first";
 
 	stringlist_Head_t *head = stringlist_create();
-    stringlist_addListEntry(first, head);
-
-    CuAssertIntEquals(tc, 1, head->elemCnt);
-    CuAssertPtrEquals(tc, first, head->first->entry);
-    CuAssertPtrNull(tc, head->first->next);
-	CuAssertPtrNull(tc, head->first->prev);
-
+    CuAssertFalse(tc, addListEntry(tc, head, first));
 }
 
 CUTEST(create){
@@ -47,14 +52,16 @@ CUTEST(initEntry){
     CuAssertIntEquals(tc, false, checkPtrsNULL(tc, &e));
 }
 
-runSuite1(void){
+int runSuite1(void){
     CUSUITE_OPEN(suite);
 
     CUTEST_ADD(suite, create);
     CUTEST_ADD(suite, initEntry);
+	CUTEST_ADD(suite, addListEntry);
 
     CuSuiteRun(suite);
     CuSuiteDetails(suite, stdout);
+    return CuSuiteGetFailcount(suite);
 }
 
 int main(void){

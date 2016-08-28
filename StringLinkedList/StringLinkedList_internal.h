@@ -27,4 +27,6 @@ typedef struct stringlist_Head_tag{
 	struct stringlist_SingleEntry_tag* last;
 }stringlist_Head_t;
 
+int stringlist_initEntry(stringlist_SingleEntry_t *sle);
+
 #endif // STRINGLINKEDLIST_INTERNAL_H_INCLUDED
