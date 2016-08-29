@@ -32,6 +32,7 @@ bool checkReserveEntry(CuTest *tc, stringlist_SingleEntry_t *e){
 bool addListEntry(CuTest *tc, stringlist_Head_t *head, char *string){
 	size_t elemCnt = head->elemCnt;
 	stringlist_SingleEntry_t *beforelast = head->last;
+	int *dummy = malloc(1000);
 
 	//adds element to list
 	stringlist_addListEntry(string, head);
@@ -39,7 +40,8 @@ bool addListEntry(CuTest *tc, stringlist_Head_t *head, char *string){
 		//if no string given, set string pointer to "NULL" string.
 		string = (char*)constStr_NULL;
 	}
-	stringlist_addListEntry(string, (stringlist_Head_t *) 1234);
+	stringlist_addListEntry(string, (stringlist_Head_t *) dummy);
+	free(dummy);
 	return	//checks, if elemCnt is increased correctly on adding elements
 			CuAssertIntEquals(tc, elemCnt+1, head->elemCnt) ||
 			//checks, if pointer to string is set correctly

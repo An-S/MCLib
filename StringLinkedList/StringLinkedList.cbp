@@ -16,6 +16,7 @@
 				<Compiler>
 					<Add option="-Wall" />
 					<Add option="-g" />
+					<Add option="-fplan9-extensions --std=gnu11" />
 				</Compiler>
 				<Linker>
 					<Add library="../libMallocWrapperDbg.a" />
@@ -31,6 +32,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-Wall" />
+					<Add option="-fplan9-extensions --std=gnu11" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -42,25 +44,12 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-Wall" />
 					<Add option="-g" />
+					<Add option="-fplan9-extensions --std=gnu11" />
 				</Compiler>
 				<ExtraCommands>
 					<Add after="StringLinkedList.exe" />
 				</ExtraCommands>
-			</Target>
-			<Target title="preprocess">
-				<Option output="pre" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
-				<Option object_output="C:/Users/User/Documents/Programmieren/EigeneCProgramme/MyCLib/StringLinkedList/.objs" />
-				<Option type="1" />
-				<Option compiler="gcc" />
-				<Option use_console_runner="0" />
-				<Compiler>
-					<Add option="-Wall" />
-					<Add option="-g" />
-					<Add option="-E" />
-				</Compiler>
 			</Target>
 		</Build>
 		<Compiler>
@@ -76,6 +65,7 @@
 		<Unit filename="StringLinkedList_internal.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
+			<Option target="test" />
 		</Unit>
 		<Unit filename="src/stringlist_Create.c">
 			<Option compilerVar="CC" />
