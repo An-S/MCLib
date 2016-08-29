@@ -42,7 +42,24 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-Wall" />
 					<Add option="-g" />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="StringLinkedList.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="preprocess">
+				<Option output="pre" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="C:/Users/User/Documents/Programmieren/EigeneCProgramme/MyCLib/StringLinkedList/.objs" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-E" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -58,6 +75,27 @@
 		<Unit filename="StringLinkedList.h" />
 		<Unit filename="StringLinkedList_internal.h" />
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_Create.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_InitElem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_addEnd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_free.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_removeEnd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_removeStart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="testsrc/assertHeadOK.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
