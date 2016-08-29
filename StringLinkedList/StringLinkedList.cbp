@@ -79,6 +79,21 @@
 		<Unit filename="src/stringlist_free.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/stringlist_getFirst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getLast.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getNext.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getPrev.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getString.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/stringlist_removeEnd.c">
 			<Option compilerVar="CC" />
 		</Unit>
