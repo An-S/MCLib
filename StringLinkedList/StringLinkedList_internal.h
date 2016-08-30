@@ -31,6 +31,15 @@ typedef struct stringlist_Head_tag{
 	struct stringlist_SingleEntry_tag* last;
 }stringlist_Head_t;
 
+//only 0-255 should be used in enum
+typedef uint8_t stringlist_IterDirection_t;
+enum STRINGLIST_ITER_DIRECTIONS{BACKWARD, FORWARD};
+typedef struct stringlist_Iter_tag{
+	size_t currentPos;
+	stringlist_SingleEntry_t *elemPtr;
+	stringlist_IterDirection_t direction;
+}stringlist_Iter_t;
+
 //private prototypes
 int stringlist_initEntry(stringlist_SingleEntry_t *sle);
 bool assertHeadOK(stringlist_Head_t *head);
