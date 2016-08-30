@@ -5,8 +5,8 @@ int stringlist_removeLastEntry(stringlist_Head_t *head){
 		assertValidList(head);
 		if (head->elemCnt > 0){
 			//remember to avoid second indirection
-			stringlist_SingleEntry_t *last = head->last;
-			stringlist_SingleEntry_t *prev = last->prev;
+			stringlist_SingleEntry_t *last = stringlist_getLast(head);
+			stringlist_SingleEntry_t *prev = stringlist_getPrev(last);
 
 			//ifree(last->entry);
 			ifree(last);

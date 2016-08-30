@@ -79,6 +79,9 @@
 		<Unit filename="src/stringlist_free.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/stringlist_getElemCnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/stringlist_getFirst.c">
 			<Option compilerVar="CC" />
 		</Unit>
