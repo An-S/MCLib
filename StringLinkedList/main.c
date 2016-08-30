@@ -136,6 +136,9 @@ CUTEST(getString){
 	CuAssertIntEquals(tc, 0, strcmp(stringlist_getString(stringlist_getFirst(head)), "first"));
 }
 
+CUTEST(getElemCnt){
+}
+
 CUTEST(addListEntry){
 	static char first[] = "first", name[] = "000";
 	size_t N = 50,i;
@@ -199,6 +202,7 @@ int runSuite1(void){
     CUTEST_ADD(suite, initEntry);
 	CUTEST_ADD(suite, addListEntry);
 	CUTEST_ADD(suite, getString);
+	CUTEST_ADD(suite, getElemCnt);
 	CUTEST_ADD(suite, firstListEntry);
 	CUTEST_ADD(suite, lastListEntry);
 	CUTEST_ADD(suite, nextListEntry);

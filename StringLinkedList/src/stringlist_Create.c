@@ -11,7 +11,7 @@ stringlist_Head_t* stringlist_create(void){
     head -> last =
     imalloc(sizeof(stringlist_SingleEntry_t));
     //RETURNONFAILURE( reportIfimallocError() );
-    stringlist_initEntry(head -> first);
+    stringlist_initEntry(stringlist_getFirst(head));
     //we do not count empty entries. they are filled by AddListEntry
     head -> elemCnt = 0;
     return head;
