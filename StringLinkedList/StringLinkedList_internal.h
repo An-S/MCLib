@@ -9,6 +9,8 @@
 #include <MCLib.h>
 #include "StringLinkedList.h"
 
+//private struct definitions
+
 /** \brief typedef for elements of linked list
  *
  * \param
@@ -29,6 +31,7 @@ typedef struct stringlist_Head_tag{
 	struct stringlist_SingleEntry_tag* last;
 }stringlist_Head_t;
 
+//private prototypes
 int stringlist_initEntry(stringlist_SingleEntry_t *sle);
 bool assertHeadOK(stringlist_Head_t *head);
 

@@ -4,9 +4,11 @@
 //typedef struct X stringlist_SingleEntry_t;
 #include <stdheaders.h>
 
+//Anonymous structs for deployment header file
 typedef struct stringlist_SingleEntry_tag stringlist_SingleEntry_t;
 typedef struct stringlist_Head_tag stringlist_Head_t;
 
+//public functions
 int stringlist_addListEntry(char* newEntry, stringlist_Head_t *list);
 int stringlist_removeLastEntry(stringlist_Head_t *head);
 int stringlist_removeFirstEntry(stringlist_Head_t *head);
