@@ -95,6 +95,7 @@ CUTEST(nextListEntry){
 	CuAssertIntEquals(tc, 0, strcmp(stringlist_getString(entry), "first"));
 	entry = stringlist_getNext(entry);
 	CuAssertIntEquals(tc, 0, strcmp(stringlist_getString(entry), "second"));
+	stringlist_free(head);
 }
 
 CUTEST(prevListEntry){
@@ -114,6 +115,7 @@ CUTEST(prevListEntry){
 	CuAssertIntEquals(tc, 0, strcmp(entry->entry, "second"));
 	entry = stringlist_getPrev(entry);
 	CuAssertIntEquals(tc, 0, strcmp(entry->entry, "first"));
+	stringlist_free(head);
 }
 
 CUTEST(firstListEntry){
@@ -121,6 +123,7 @@ CUTEST(firstListEntry){
 	addListEntry(tc, head, "first");
 	addListEntry(tc, head, "second");
 	CuAssertIntEquals(tc, 0, strcmp(stringlist_getFirst(head)->entry, "first"));
+	stringlist_free(head);
 }
 
 CUTEST(lastListEntry){
@@ -128,16 +131,57 @@ CUTEST(lastListEntry){
 	addListEntry(tc, head, "first");
 	addListEntry(tc, head, "second");
 	CuAssertIntEquals(tc, 0, strcmp(stringlist_getLast(head)->prev->entry, "second"));
+	stringlist_free(head);
 }
 
 CUTEST(getString){
 	stringlist_Head_t *head = stringlist_create();
 	addListEntry(tc, head, "first");
 	CuAssertIntEquals(tc, 0, strcmp(stringlist_getString(stringlist_getFirst(head)), "first"));
+	stringlist_free(head);
 }
 
 CUTEST(getElemCnt){
+	stringlist_Head_t *head = stringlist_create();
+
+	CuAssertIntEquals(tc, 0, stringlist_getElemCnt(head));
+	head->elemCnt = 5;
+	CuAssertIntEquals(tc, 5, stringlist_getElemCnt(head));
+	head->elemCnt = 23456;
+	CuAssertIntEquals(tc, 23456, stringlist_getElemCnt(head));
+
+	stringlist_free(head);
 }
+
+CUTEST(incElemCnt){
+	/*stringlist_Head_t *head = stringlist_create();
+
+	CuAssertIntEquals(tc, 1, stringlist_incElemCnt(head));
+	CuAssertIntEquals(tc, 2, stringlist_incElemCnt(head));
+	CuAssertIntEquals(tc, 3, stringlist_incElemCnt(head));
+	CuAssertIntEquals(tc, 4, stringlist_incElemCnt(head));
+	CuAssertIntEquals(tc, 5, stringlist_incElemCnt(head));
+	stringlist_free(head);
+	*/
+}
+
+CUTEST(decElemCnt){
+	stringlist_Head_t *head = stringlist_create();
+
+	//check that elemCnt is not decremented again if already zero
+	CuAssertIntEquals(tc, 0, stringlist_decElemCnt(head));
+	CuAssertIntEquals(tc, 0, stringlist_decElemCnt(head));
+	CuAssertIntEquals(tc, 0, stringlist_decElemCnt(head));
+
+	head->elemCnt = 5;
+	CuAssertIntEquals(tc, 4, stringlist_decElemCnt(head));
+	CuAssertIntEquals(tc, 3, stringlist_decElemCnt(head));
+	CuAssertIntEquals(tc, 2, stringlist_decElemCnt(head));
+	CuAssertIntEquals(tc, 1, stringlist_decElemCnt(head));
+	CuAssertIntEquals(tc, 0, stringlist_decElemCnt(head));
+	stringlist_free(head);
+}
+
 
 CUTEST(addListEntry){
 	static char first[] = "first", name[] = "000";
@@ -195,6 +239,10 @@ CUTEST(initEntry){
     CuAssertIntEquals(tc, false, checkPtrsNULL(tc, &e));
 }
 
+CUTEST(finalCheck){
+	CuAssertIntEquals(tc, 0, returnAllocationCount());
+}
+
 int runSuite1(void){
     CUSUITE_OPEN(suite);
 
@@ -207,9 +255,16 @@ int runSuite1(void){
 	CUTEST_ADD(suite, lastListEntry);
 	CUTEST_ADD(suite, nextListEntry);
 	CUTEST_ADD(suite, prevListEntry);
+	CUTEST_ADD(suite, incElemCnt);
+	CUTEST_ADD(suite, decElemCnt);
+	CUTEST_ADD(suite, getElemCnt);
+
+	//must be final test
+	CUTEST_ADD(suite, finalCheck);
 
     CuSuiteRun(suite);
     CuSuiteDetails(suite, stdout);
+
     return CuSuiteGetFailcount(suite);
 }
 

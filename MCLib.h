@@ -12,6 +12,7 @@
 #include "Strings/MCLib_Strings.h"
 #include "Counter/Counter.h"
 #include "TrigFunctions/MCLib_TrigFunctions.h"
+#include "malloc_and_co/MCLib_malloc.h"
 
 //typedef char[8] mychar;
 typedef char minWidthIntCharArray_t[INTFIELDWIDTH(sizeof(int))];

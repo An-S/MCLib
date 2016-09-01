@@ -9,3 +9,22 @@ stringlist_SingleEntry_t *stringlist_getFirst(stringlist_Head_t *head){
 	}
 	return NULL;
 }
+
+uint8_t stringlist_setFirst(stringlist_Head_t *head, stringlist_SingleEntry_t *first){
+	if (head){
+		//get element, which is first element up to now
+		stringlist_SingleEntry_t *oldFirst = stringlist_getFirst(head);
+
+		//check, if first->next points to another element.
+		if (!stringlist_getNext(first)){
+			//if not, just insert new first before old first
+			head->first = first;
+			first->next = oldFirst;
+		}else{
+			//if some elements already chained exit with error
+			return EXIT_FAILURE;
+		}
+		return EXIT_SUCCESS,
+	}
+	return EXIT_FAILURE;
+}

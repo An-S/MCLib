@@ -338,6 +338,13 @@
 			<Option compilerVar="CC" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="malloc_and_co/MCLib_malloc.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="malloc_and_co/MCLib_malloc.h">
+			<Option target="lib" />
+		</Unit>
 		<Unit filename="range/MCLib_Range.h">
 			<Option target="lib" />
 			<Option target="testRange" />
@@ -364,6 +371,21 @@
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="strings/MCLib_getFieldwidthFromFormatString.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+		</Unit>
+		<Unit filename="strings/MCLib_stralloc.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+		</Unit>
+		<Unit filename="strings/MCLib_strcat.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+		</Unit>
+		<Unit filename="strings/MCLib_strcopy.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testStrings" />

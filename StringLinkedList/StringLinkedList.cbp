@@ -76,6 +76,9 @@
 		<Unit filename="src/stringlist_addEnd.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/stringlist_decElemCnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/stringlist_free.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -95,6 +98,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/stringlist_getString.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_incElemCnt.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/stringlist_removeEnd.c">

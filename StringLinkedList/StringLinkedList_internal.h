@@ -43,6 +43,11 @@ typedef struct stringlist_Iter_tag{
 //private prototypes
 int stringlist_initEntry(stringlist_SingleEntry_t *sle);
 bool assertHeadOK(stringlist_Head_t *head);
+size_t stringlist_incElemCnt(stringlist_Head_t *head);
+size_t stringlist_decElemCnt(stringlist_Head_t *head);
+uint8_t stringlist_setFirst(stringlist_Head_t *head, stringlist_SingleEntry_t *first);
+uint8_t stringlist_setLast(stringlist_Head_t *head, stringlist_SingleEntry_t *last);
+uint8_t stringlist_setString(stringlist_SingleEntry_t *elem, char *newstr);
 
 #define assertValidList(head) assert(!assertHeadOK(head))
 
