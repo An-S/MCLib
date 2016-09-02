@@ -154,7 +154,7 @@ CUTEST(getElemCnt){
 }
 
 CUTEST(incElemCnt){
-	/*stringlist_Head_t *head = stringlist_create();
+	stringlist_Head_t *head = stringlist_create();
 
 	CuAssertIntEquals(tc, 1, stringlist_incElemCnt(head));
 	CuAssertIntEquals(tc, 2, stringlist_incElemCnt(head));
@@ -162,7 +162,6 @@ CUTEST(incElemCnt){
 	CuAssertIntEquals(tc, 4, stringlist_incElemCnt(head));
 	CuAssertIntEquals(tc, 5, stringlist_incElemCnt(head));
 	stringlist_free(head);
-	*/
 }
 
 CUTEST(decElemCnt){

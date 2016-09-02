@@ -10,7 +10,7 @@ int stringlist_removeLastEntry(stringlist_Head_t *head){
 
 			//ifree(last->entry);
 			ifree(last);
-			ifree(prev->entry);
+			MCLib_strfree(prev->entry);
 			prev->entry= NULL;
 			head->last = prev;
 			prev->next = NULL;

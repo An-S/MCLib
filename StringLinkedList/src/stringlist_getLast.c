@@ -24,7 +24,7 @@ uint8_t stringlist_setLast(stringlist_Head_t *head, stringlist_SingleEntry_t *la
 			//if some elements already chained exit with error
 			return EXIT_FAILURE;
 		}
-		return EXIT_SUCCESS,
+		return EXIT_SUCCESS;
 	}
 	return EXIT_FAILURE;
 }

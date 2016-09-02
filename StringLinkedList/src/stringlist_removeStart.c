@@ -9,7 +9,7 @@ int stringlist_removeFirstEntry(stringlist_Head_t *head){
 
 			//ifree(last->entry);
 			head->first = stringlist_getNext(first);
-			ifree(first->entry);
+			MCLib_strfree(first->entry);
 			ifree(first);
 			first = stringlist_getFirst(head);
 			first->prev = NULL;

@@ -390,6 +390,11 @@
 			<Option target="lib" />
 			<Option target="testStrings" />
 		</Unit>
+		<Unit filename="strings/MCLib_strfree.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+		</Unit>
 		<Unit filename="strings/McLib_strings.h">
 			<Option target="lib" />
 			<Option target="testStrings" />

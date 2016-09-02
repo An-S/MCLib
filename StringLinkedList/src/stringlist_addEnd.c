@@ -16,7 +16,7 @@ int stringlist_addListEntry(char* newEntry, stringlist_Head_t *head){
 		}
 		//alloc space for string and
 		//copy string to list element
-		last -> entry = strcpy(imalloc(strlen(newEntry)+1), newEntry);
+		last -> entry = MCLib_strcopy(newEntry);
 		assert('\0' == (last -> entry)[strlen(newEntry)] );//Check that \0 is copied
 		//else last -> entry is kept NULL
 		++ head -> elemCnt;

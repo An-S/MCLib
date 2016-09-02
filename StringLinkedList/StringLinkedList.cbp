@@ -55,9 +55,6 @@
 		<Compiler>
 			<Add directory="C:/Users/Stefan/Documents/Programmieren/EigeneCProgramme/MyCLib" />
 		</Compiler>
-		<Linker>
-			<Add library="../libMallocWrapperDbg.a" />
-		</Linker>
 		<Unit filename="StringLinkedList.c">
 			<Option compilerVar="CC" />
 		</Unit>

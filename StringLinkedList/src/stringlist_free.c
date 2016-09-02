@@ -15,7 +15,7 @@ int stringlist_free(stringlist_Head_t *list){
 			assert (preventry -> next == entry );//assert that preventry's next ptr points to entry
 			entry = preventry;
 			assert (NULL != entry -> entry);//Check for invalid entries
-			ifree(entry -> entry);
+			MCLib_strfree(entry -> entry);
 			assert( EXIT_SUCCESS == reportIfimallocError() );
 			preventry = entry -> prev;
 			ifree(entry);
