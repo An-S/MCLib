@@ -48,6 +48,7 @@ size_t stringlist_decElemCnt(stringlist_Head_t *head);
 uint8_t stringlist_setFirst(stringlist_Head_t *head, stringlist_SingleEntry_t *first);
 uint8_t stringlist_setLast(stringlist_Head_t *head, stringlist_SingleEntry_t *last);
 uint8_t stringlist_setString(stringlist_SingleEntry_t *elem, char *newstr);
+stringlist_SingleEntry_t *stringlist_createEmptyElem(void);
 
 #define assertValidList(head) assert(!assertHeadOK(head))
 

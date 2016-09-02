@@ -10,8 +10,8 @@ char *stringlist_getString(stringlist_SingleEntry_t *elem){
 
 uint8_t stringlist_setString(stringlist_SingleEntry_t *elem, char *newstr){
 	if (elem){
-		//not correct. copy should be inserted
-		elem->entry = newstr;
+		//insert pointer to copy of input string
+		elem->entry = MCLib_strcopy(newstr);
 		return EXIT_SUCCESS;
 	}
 	return EXIT_FAILURE;

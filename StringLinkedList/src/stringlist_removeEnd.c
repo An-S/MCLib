@@ -3,7 +3,7 @@
 int stringlist_removeLastEntry(stringlist_Head_t *head){
 	if (head){
 		assertValidList(head);
-		if (head->elemCnt > 0){
+		if (stringlist_getElemCnt(head) > 0){
 			//remember to avoid second indirection
 			stringlist_SingleEntry_t *last = stringlist_getLast(head);
 			stringlist_SingleEntry_t *prev = stringlist_getPrev(last);

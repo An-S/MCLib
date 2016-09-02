@@ -3,8 +3,6 @@
 int stringlist_addListEntry(char* newEntry, stringlist_Head_t *head){
 	//check on valid head ptr
 	if (head){
-		//if one of these asserts fail, given head pointer is suspicious to really point to list structure
-		assertValidList(head);
 		//remember to avoid second indirection
 		stringlist_SingleEntry_t *last = stringlist_getLast(head), *next = NULL;
 		//last: ......*

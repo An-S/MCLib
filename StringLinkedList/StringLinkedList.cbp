@@ -73,6 +73,9 @@
 		<Unit filename="src/stringlist_addEnd.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/stringlist_createEmptyElem.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/stringlist_decElemCnt.c">
 			<Option compilerVar="CC" />
 		</Unit>

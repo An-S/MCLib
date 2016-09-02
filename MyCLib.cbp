@@ -403,11 +403,10 @@
 			<Option compilerVar="CC" />
 			<Option target="testStrings" />
 		</Unit>
-		<Unit filename="trigFunctions/createSin.c">
-			<Option compilerVar="CC" />
+		<Unit filename="trigFunctions/MCLib_trigFunctions.h">
 			<Option target="lib" />
 		</Unit>
-		<Unit filename="trigFunctions/trigFunctions.h">
+		<Unit filename="trigFunctions/createSin.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 		</Unit>

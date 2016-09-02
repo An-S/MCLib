@@ -2,7 +2,7 @@
 #define TRIGFUNCTIONS_H_INCLUDED
 
 #include <mclib.h>
-/*#include <math.h>*/
+#include <math.h>
 
 typedef int MCLib_sinelem_t;
 typedef struct{
