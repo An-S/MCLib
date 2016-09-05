@@ -14,7 +14,7 @@ int stringlist_removeLastEntry(stringlist_Head_t *head){
 			prev->entry= NULL;
 			head->last = prev;
 			prev->next = NULL;
-			-- head -> elemCnt;
+			stringlist_decElemCnt(head);
 			return EXIT_SUCCESS;
 		}
 	}

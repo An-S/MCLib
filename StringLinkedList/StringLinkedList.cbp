@@ -109,6 +109,9 @@
 		<Unit filename="src/stringlist_removeStart.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/stringlist_setFirstPtr.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="testsrc/assertHeadOK.c">
 			<Option compilerVar="CC" />
 		</Unit>
