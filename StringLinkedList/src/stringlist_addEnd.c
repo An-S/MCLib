@@ -14,17 +14,17 @@ int stringlist_addListEntry(char* newEntry, stringlist_Head_t *head){
 		}
 		//alloc space for string and
 		//copy string to list element
-		last -> entry = MCLib_strcopy(newEntry);
+		stringlist_setString(last, newEntry);
 		assert('\0' == (last -> entry)[strlen(newEntry)] );//Check that \0 is copied
 		//else last -> entry is kept NULL
 		stringlist_incElemCnt(head);
 		//alloc next element and set next pointer to it
-		next = head -> last = last -> next = stringlist_createEmptyElem();
-		//last: ......#*
+		next = stringlist_createEmptyElem();
 		RETURNONFAILURE( reportIfimallocError() );
-
+		stringlist_setNextPtr(last, next);
+		stringlist_setLastPtr(head, next);
 		//last = last->next;
-		next -> prev = last;
+		stringlist_setPrevPtr(next, last);
 
 		//assert( NULL == this -> next -> next );
 		return EXIT_SUCCESS;

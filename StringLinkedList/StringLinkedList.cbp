@@ -112,6 +112,15 @@
 		<Unit filename="src/stringlist_setFirstPtr.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/stringlist_setLastPtr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_setNextPtr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_setPrevPtr.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="testsrc/assertHeadOK.c">
 			<Option compilerVar="CC" />
 		</Unit>

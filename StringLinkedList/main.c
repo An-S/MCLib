@@ -134,11 +134,19 @@ CUTEST(lastListEntry){
 	stringlist_free(head);
 }
 
+CUTEST(setString){
+	stringlist_SingleEntry_t *elem = stringlist_createEmptyElem();
+
+	stringlist_setString(elem, "first");
+	CuAssertIntEquals(tc, 0, strcmp(elem->entry, "first"));
+	ifree(elem);
+}
+
 CUTEST(getString){
-	stringlist_Head_t *head = stringlist_create();
-	addListEntry(tc, head, "first");
-	CuAssertIntEquals(tc, 0, strcmp(stringlist_getString(stringlist_getFirst(head)), "first"));
-	stringlist_free(head);
+	stringlist_SingleEntry_t *elem = stringlist_createEmptyElem();
+	elem->entry = "first";
+	CuAssertIntEquals(tc, 0, strcmp(stringlist_getString(elem), "first"));
+	ifree(elem);
 }
 
 CUTEST(getElemCnt){
@@ -215,6 +223,42 @@ CUTEST(addListEntry){
 */
 }
 
+CUTEST(setPtrs){
+	stringlist_Head_t *head = stringlist_create();
+	//remember first and last ptrs to be able to change values for testing purposes
+	stringlist_SingleEntry_t *first = head->first;
+
+	//check setters of first and last pntrs
+	stringlist_setFirstPtr(head, (stringlist_SingleEntry_t*)0x1234);
+	CuAssertPtrEquals(tc, (stringlist_SingleEntry_t*)0x1234, head->first);
+	stringlist_setLastPtr(head, (stringlist_SingleEntry_t*)0x4321);
+	CuAssertPtrEquals(tc, (stringlist_SingleEntry_t*)0x4321, head->last);
+
+	//restore first and last pntrs
+	head->first = head->last = first;
+
+	//check setters of prev and next pntrs
+	stringlist_setNextPtr(head->last, (stringlist_SingleEntry_t*)0x2341);
+	CuAssertPtrEquals(tc, (stringlist_SingleEntry_t*)0x2341, head->last->next);
+	stringlist_setPrevPtr(head->last, (stringlist_SingleEntry_t*)0x3412);
+	CuAssertPtrEquals(tc, (stringlist_SingleEntry_t*)0x3412, head->last->prev);
+
+	//restore NULL ptrs as no elements have been added
+	stringlist_setNextPtr(head->last, (stringlist_SingleEntry_t*)NULL);
+	stringlist_setPrevPtr(head->last, (stringlist_SingleEntry_t*)NULL);
+	//check restoration of NULL pntrs
+	CuAssertPtrEquals(tc, (stringlist_SingleEntry_t*)NULL, head->last->next);
+	CuAssertPtrEquals(tc, (stringlist_SingleEntry_t*)NULL, head->last->prev);
+	stringlist_free(head);
+}
+
+CUTEST(createEmptyElem){
+	//creates new header for linked list
+    stringlist_SingleEntry_t *elem = stringlist_createEmptyElem();
+	CuAssertFalse(tc, checkPtrsNULL(tc, elem));
+	ifree(elem);
+}
+
 CUTEST(create){
 	//creates new header for linked list
     stringlist_Head_t *head = stringlist_create();
@@ -245,10 +289,16 @@ CUTEST(finalCheck){
 int runSuite1(void){
     CUSUITE_OPEN(suite);
 
-    CUTEST_ADD(suite, create);
     CUTEST_ADD(suite, initEntry);
+
+    CUTEST_ADD(suite, createEmptyElem);
+
+    CUTEST_ADD(suite, getString);
+	CUTEST_ADD(suite, setString);
+    CUTEST_ADD(suite, create);
+	CUTEST_ADD(suite, setPtrs);
 	CUTEST_ADD(suite, addListEntry);
-	CUTEST_ADD(suite, getString);
+
 	CUTEST_ADD(suite, getElemCnt);
 	CUTEST_ADD(suite, firstListEntry);
 	CUTEST_ADD(suite, lastListEntry);

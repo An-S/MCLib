@@ -11,9 +11,10 @@ int stringlist_removeLastEntry(stringlist_Head_t *head){
 			//ifree(last->entry);
 			ifree(last);
 			MCLib_strfree(prev->entry);
-			prev->entry= NULL;
-			head->last = prev;
-			prev->next = NULL;
+
+			//stringlist_setPrevPtr(prev, NULL);
+			stringlist_setNextPtr(prev, NULL);
+			stringlist_setLastPtr(head, prev);
 			stringlist_decElemCnt(head);
 			return EXIT_SUCCESS;
 		}
