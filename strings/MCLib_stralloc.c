@@ -8,15 +8,17 @@
  */
 char *MCLib_stralloc(size_t strlen)
 {
-    //test on strlen>0. string with length 0 does not make sense
-    if (strlen){
-    //allocate room for terminating \0 character, too
+	//allocate room for terminating \0 character, too
     //newly allocated string should be valid and empty, thats why we use Calloc instead of just Alloc
-		char* newStr = (char*) calloc ( sizeof(char), strlen+1 );
+    ++strlen;
+    //test on strlen>0 (overflow). string with length 0 does not make sense
+    if (strlen){
+		char* newStr = (char*) calloc ( sizeof(char), strlen );
 		assert (NULL != newStr);
 
 		return newStr;
     }
+    //}
     return NULL;
 }
 

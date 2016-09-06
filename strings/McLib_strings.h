@@ -9,5 +9,6 @@ char *MCLib_stralloc(size_t strlen);
 char* MCLib_strcat(const char* first, const char* second);
 char* MCLib_strcopy(const char* old);
 uint8_t MCLib_strfree(char* str);
+char *MCLib_strleft(char* str, size_t len);
 
 #endif // MCLIB_STRINGS_H_INCLUDED
