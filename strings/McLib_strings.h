@@ -10,5 +10,7 @@ char* MCLib_strcat(const char* first, const char* second);
 char* MCLib_strcopy(const char* old);
 uint8_t MCLib_strfree(char* str);
 char *MCLib_strleft(char* str, size_t len);
+char *MCLib_randstr(uint8_t lenmin, uint8_t lenmax, char cmin, char cmax);
+char *MCLib_randstrLen(uint8_t len, char cmin, char cmax);
 
 #endif // MCLIB_STRINGS_H_INCLUDED

@@ -12,6 +12,7 @@ bool MCLib_lessThan_Str(const void *a, const void *b);
 bool MCLib_lessThanOrEq_Int(const void *a, const void *b);
 bool MCLib_lessThanOrEq_Str(const void *a, const void *b);
 
+bool MCLib_lessThan_Char(const void *a, const void *b);
 //MAKEFORWARDDEKL(OrEq_Str);
 //MAKEFORWARDDEKL(OrEq_Int);
 

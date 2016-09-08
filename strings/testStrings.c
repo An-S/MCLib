@@ -4,11 +4,18 @@
 char iszero = 0;
 char isquestion = '?';
 
+#define FIRSTSTR "first"
+#define SECONDSTR "second"
+
+char firstStr[] = FIRSTSTR;
+char secondStr[] = SECONDSTR;
+char firstsecondStr[] = FIRSTSTR SECONDSTR;
+
 CUTEST(strleft){
-	char string1[] = "first second";
-	char *leftstr = MCLib_strleft(string1, 5);
-	CuAssertStrEquals(tc, "first", leftstr);
-	CuAssertIntEquals(tc, 0, leftstr[strlen("first")]);
+	char *string1 = firstsecondStr;
+	char *leftstr = MCLib_strleft(string1, strlen(firstStr));
+	CuAssertStrEquals(tc, firstStr, leftstr);
+	CuAssertIntEquals(tc, 0, leftstr[strlen(firstStr)]);
 	MCLib_strfree(leftstr);
 	leftstr = MCLib_strleft(string1, 100);
 	CuAssertStrEquals(tc, string1, leftstr);
@@ -19,11 +26,11 @@ CUTEST(strleft){
 }
 
 CUTEST(strcat){
-	char string1[] = "first ";
-	char string2[] = "second";
+	char *string1 = firstStr;//[] = "first ";
+	char *string2 = secondStr;//[] = "second";
 	char *catstr = MCLib_strcat(string1, string2);
-	CuAssertStrEquals(tc, "first second", catstr);
-	CuAssertIntEquals(tc, 0, catstr[strlen("first second")]);
+	CuAssertStrEquals(tc, firstsecondStr, catstr);
+	CuAssertIntEquals(tc, 0, catstr[strlen(firstsecondStr)]);
 	MCLib_strfree(catstr);
 	catstr = MCLib_strcat(NULL, string2);
 	CuAssertStrEquals(tc, string2, catstr);

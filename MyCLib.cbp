@@ -102,6 +102,10 @@
 			<Option target="lib" />
 			<Option target="testRange" />
 		</Unit>
+		<Unit filename="Comparison/lessthanChar.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
 		<Unit filename="Comparison/lessthanOrEq.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
@@ -288,6 +292,10 @@
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 		</Unit>
+		<Unit filename="constStdStr/constStr_zero.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
 		<Unit filename="constStdStr/main.c">
 			<Option compilerVar="CC" />
 			<Option target="&lt;{~None~}&gt;" />
@@ -349,6 +357,9 @@
 			<Option target="lib" />
 			<Option target="testRange" />
 		</Unit>
+		<Unit filename="range/MCLib_createRange">
+			<Option target="lib" />
+		</Unit>
 		<Unit filename="range/chkIntRng.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
@@ -371,6 +382,11 @@
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="strings/MCLib_getFieldwidthFromFormatString.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+		</Unit>
+		<Unit filename="strings/MCLib_randstr.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testStrings" />
