@@ -3,6 +3,7 @@
 int stringlist_addListEntry(char* newEntry, stringlist_Head_t *head){
 	//check on valid head ptr
 	if (head){
+
 		//remember to avoid second indirection
 		stringlist_SingleEntry_t *last = stringlist_getLast(head), *next = NULL;
 		//last: ......*
@@ -26,6 +27,10 @@ int stringlist_addListEntry(char* newEntry, stringlist_Head_t *head){
 		//last = last->next;
 		stringlist_setPrevPtr(next, last);
 
+		//test if we would exceed max list length
+		if (stringlist_getElemCnt(head) >= stringlist_getMaxElemCnt(head)){
+			stringlist_removeFirstEntry(head);
+		}
 		//assert( NULL == this -> next -> next );
 		return EXIT_SUCCESS;
 	}

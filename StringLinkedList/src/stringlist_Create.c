@@ -14,7 +14,10 @@ stringlist_Head_t* stringlist_create(void){
 
     //getFirst does not work here because it asserts head->first->prev == NULL and head->first was not init at this time
     stringlist_initEntry(head -> first/*stringlist_getFirst(head)*/);
-    //we do not count empty entries. they are filled by AddListEntry
+
+    // we do not count empty entries. they are filled by AddListEntry
     head -> elemCnt = 0;
+    // use UINT_MAX for maxElemCnt, which is more or less equivalent to unlimited entries
+    head -> maxElemCnt = UINT_MAX;
     return head;
 }

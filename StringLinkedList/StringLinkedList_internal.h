@@ -27,6 +27,7 @@ typedef struct stringlist_SingleEntry_tag{
 
 typedef struct stringlist_Head_tag{
 	size_t elemCnt;
+	size_t maxElemCnt;
 	struct stringlist_SingleEntry_tag* first;
 	struct stringlist_SingleEntry_tag* last;
 }stringlist_Head_t;
