@@ -21,5 +21,6 @@ stringlist_SingleEntry_t *stringlist_getNext(stringlist_SingleEntry_t *elem);
 stringlist_SingleEntry_t *stringlist_getPrev(stringlist_SingleEntry_t *elem);
 char *stringlist_getString(stringlist_SingleEntry_t *elem);
 size_t stringlist_getElemCnt(stringlist_Head_t *head);
+size_t stringlist_getMaxElemCnt(stringlist_Head_t *head);
 
 #endif // STRINGLINKEDLIST_H_INCLUDED
