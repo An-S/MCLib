@@ -48,6 +48,24 @@
 		<Unit filename="src/slliterator_create.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/slliterator_get.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slliterator_getDir.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slliterator_getPos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slliterator_proceed.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slliterator_retreat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slliterator_set.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="testsrc/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
