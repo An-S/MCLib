@@ -15,7 +15,9 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add library="..\libMallocWrapperDbg.a" />
+					<Add library="../libMallocWrapperDbg.a" />
+					<Add library="../libStringLinkedListDbg.a" />
+					<Add library="../libStringLinkedList.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -28,7 +30,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="..\libMallocWrapper.a" />
+					<Add library="../libMallocWrapper.a" />
 				</Linker>
 			</Target>
 		</Build>
