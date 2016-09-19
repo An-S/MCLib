@@ -1,6 +1,6 @@
-#include <slliterator_internal.h>
+#include <sllIterator_internal.h>
 
-sllIterator_Pos_t slliterator_getPos(sllIterator_t *it){
+sllIterator_Pos_t sllIterator_getPos(sllIterator_t *it){
 	if (it){
 		return it->currentPos;
 	}

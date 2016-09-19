@@ -1,7 +1,7 @@
 
-#include <slliterator_internal.h>
+#include <sllIterator_internal.h>
 
-sllIterator_t* slliterator_create(stringlist_Head_t *head, sllIterator_Direction_t dir){
+sllIterator_t* sllIterator_create(stringlist_Head_t *head, sllIterator_Direction_t dir){
 	//alloc space to hold iterator
     sllIterator_t* it = sllIterator_alloc();
     //dependent on direction set elemPtr to first or last element in list

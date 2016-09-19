@@ -1,7 +1,7 @@
 
-#include <slliterator_internal.h>
+#include <sllIterator_internal.h>
 
-stringlist_SingleEntry_t *slliterator_proceed(sllIterator_t *it){
+stringlist_SingleEntry_t *sllIterator_proceed(sllIterator_t *it){
 	//move to next element if direction is SLLIT_FORWARD
-	return slliterator_conditionalMove(SLLIT_FORWARD == slliterator_getDir(it), it);
+	return sllIterator_conditionalMove(SLLIT_FORWARD == sllIterator_getDir(it), it);
 }

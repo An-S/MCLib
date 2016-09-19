@@ -7,5 +7,5 @@
 #define RETURNONFAILURE(test) do{if (TESTFAILURE(test)) return EXIT_FAILURE;}while(0);
 
 #include <StringLinkedList/StringLinkedList.h>
-
+#include <StringLinkedList/StringLinkedListIterator/include/sllIterator.h>
 #endif // CMDLINEWITHHISTORY_INTERNAL_H_INCLUDED

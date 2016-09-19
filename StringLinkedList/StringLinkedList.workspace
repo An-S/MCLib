@@ -3,5 +3,6 @@
 	<Workspace title="Workspace">
 		<Project filename="StringLinkedList.cbp" />
 		<Project filename="StringLinkedListIterator/StringLinkedListIterator.cbp" />
+		<Project filename="../CommandLineWithHistory/CommandLineWithHistory.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

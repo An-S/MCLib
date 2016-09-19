@@ -96,7 +96,7 @@ char* promptUserForStringInput(){
 	puts("Input string");
 	fgetsreturn = fgets(input, maxInputLen, stdin);
 
-	printf("Your input:%s, %p, returnval:%p\n", input, input, fgetsreturn);
+	printf("Your input:%s @ %p, returnval:%p\n", input, input, fgetsreturn);
 	//input = irealloc(input, strlen(i//nput)+1);
 	assert( EXIT_SUCCESS == reportIfimallocError() );
 	return input;
@@ -106,6 +106,7 @@ int main()
 {
     char* input = NULL;
     stringlist_Head_t *listHead = stringlist_create();
+	sllIterator_t *it = sllIterator_create(listHead, SLLIT_FORWARD);
 
     do{
 		input = promptUserForStringInput();
@@ -115,7 +116,7 @@ int main()
 		ifree(input);
 		RETURNONFAILURE( reportIfimallocError() );
 	}while(0 != strcmp(input, "\n"));
-	stringlist_outputAllEntries();
+	stringlist_outputAllEntries(listHead);
 
 	//outputInputList();
 	assert( EXIT_SUCCESS == reportIfimallocError() );

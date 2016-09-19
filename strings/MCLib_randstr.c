@@ -6,7 +6,7 @@ char *MCLib_randstrLen(uint8_t len, char cmin, char cmax){
 
     //test on NULL ptr
     if (randstr){
-		int i = len, char rc;
+		int i = len; char rc;
 		if (!cmin) cmin = 1;
 		for (;i!=0;--i){
 			rc = rand()*(cmax-cmin)/RAND_MAX+cmin;

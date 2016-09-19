@@ -40,9 +40,12 @@
 			<Add directory="include" />
 			<Add directory="../../StringLinkedList" />
 		</Compiler>
-		<Unit filename="include/slliterator.h" />
-		<Unit filename="include/slliterator_internal.h" />
+		<Unit filename="include/sllIterator.h" />
+		<Unit filename="include/sllIterator_internal.h" />
 		<Unit filename="src/slliterator_alloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slliterator_conditionallyGetNextPrev.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/slliterator_create.c">

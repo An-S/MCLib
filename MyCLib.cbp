@@ -28,6 +28,8 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-Wextra" />
+					<Add directory="StringLinkedList/StringLinkedListIterator/include" />
+					<Add directory="StringLinkedList" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -263,6 +265,169 @@
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_internal.h">
 			<Option target="MallocWrapper" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedList.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedList.h">
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/include/sllIterator.h">
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/include/sllIterator_internal.h">
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_alloc.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_conditionallyGetNextPrev.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_create.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_get.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_getDir.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_getPos.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_proceed.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_retreat.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_set.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/testsrc/main.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedList_internal.h">
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/TestStringLinkedList/TestStringLinkedList.h">
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/TestStringLinkedList/main.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/main.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/malloctest.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/multilinemac.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_Create.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_InitElem.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_addEnd.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_createEmptyElem.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_decElemCnt.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_free.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getElemCnt.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getFirst.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getLast.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getMaxElemCnt.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getNext.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getPrev.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getString.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_incElemCnt.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_removeEnd.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_removeStart.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_setFirstPtr.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_setLastPtr.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_setMaxElemCnt.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_setNextPtr.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_setPrevPtr.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/testsrc/assertHeadOK.c">
+			<Option compilerVar="CC" />
 			<Option target="lib" />
 		</Unit>
 		<Unit filename="constStdStr/MCLib_constStdStr.h">
