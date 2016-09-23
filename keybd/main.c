@@ -9,7 +9,8 @@ char MCLib_passCharAsIs(char ch){
 
 int main()
 {
-    MCLib_inputField(200,0,MCLib_passCharAsIs);
+    char *myInput = MCLib_inputField(200,0,MCLib_passCharAsIs);
 
+    _cprintf("\r\nInput was: %s\r\n", myInput);
     return 0;
 }
