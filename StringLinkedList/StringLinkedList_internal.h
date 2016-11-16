@@ -22,7 +22,7 @@ typedef struct stringlist_SingleEntry_tag{
 	char* entry;
 	struct stringlist_SingleEntry_tag* next;
 	struct stringlist_SingleEntry_tag* prev;
-}stringlist_SingleEntry_t;
+};
 
 
 typedef struct stringlist_Head_tag{
@@ -30,7 +30,7 @@ typedef struct stringlist_Head_tag{
 	size_t maxElemCnt;
 	struct stringlist_SingleEntry_tag* first;
 	struct stringlist_SingleEntry_tag* last;
-}stringlist_Head_t;
+};
 
 //private prototypes
 int stringlist_initEntry(stringlist_SingleEntry_t *sle);

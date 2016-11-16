@@ -11,7 +11,10 @@
 #include "constStdStr/MCLib_constStdStr.h"
 #include "Strings/MCLib_Strings.h"
 #include "Counter/Counter.h"
-#include "TrigFunctions/MCLib_TrigFunctions.h"
+#include "Conversion/conversion.h"
+#ifndef __CC65__
+    #include "TrigFunctions/MCLib_TrigFunctions.h"
+#endif
 #include "malloc_and_co/MCLib_malloc.h"
 
 //typedef char[8] mychar;

@@ -31,7 +31,8 @@ char *MCLib_randstr(uint8_t lenmin, uint8_t lenmax, char cmin, char cmax)
 	srand(clock()>>(8*(sizeof(clock_t)-sizeof(unsigned int))) );
 	len = rand()*(lenmax-lenmin)/RAND_MAX+lenmin;
 
-	char *randstr = MCLib_randstrLen(len, cmin, cmax);
+	{char *randstr = MCLib_randstrLen(len, cmin, cmax);
 
     return randstr;
+	}
 }

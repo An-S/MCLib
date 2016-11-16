@@ -20,10 +20,11 @@ char* MCLib_strcat(const char* first, const char* second)
 			strcat(newStr, second);
 			//return cat str
 			return newStr;
-		}
+		}else{
 		//only make copy of first string as second param contained NULL
-		char* newStr = MCLib_strcopy(first);
-		return newStr;
+            char* newStr = MCLib_strcopy(first);
+            return newStr;
+		}
 	}
 	if (second){
 		//only make copy of second string as first param contained NULL

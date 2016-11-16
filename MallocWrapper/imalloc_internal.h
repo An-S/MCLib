@@ -7,6 +7,8 @@
 	#include <stdint.h>
 	#include <assert.h>
 	#include <string.h>
+	#include <cmacros.h>
+
 	#include "imalloc.h"
 	#include "imalloc_helperfunctions.h"
 
@@ -20,13 +22,7 @@
 	//	**********************************************************************
 
 
-	typedef struct {
-		size_t headersize;
-		size_t size;
-		//imalloc_arrayType_t type;
-		void* thisptr;
-		char magic[sizeof(DEFAULTMAGIC)];
-	}blockheader_t;
+
 
 	int imalloc_setError(int ec);//Setting of error codes will be performed internally, only
 
@@ -59,11 +55,23 @@
 	//	**********************************************************
 	//	**	Internal defaults									**
 	//	**********************************************************
-	extern blockheader_t defaultblockheader;
-	extern char defaultEndMarkerStr[sizeof(DEFAULTMAGIC)];
-	extern char defaultMagicStr[sizeof(DEFAULTENDMARKER)];
+
+
+	extern char defaultEndMarkerStr[sizeof(DEFAULTENDMARKER)];
+	extern char defaultMagicStr[sizeof(DEFAULTMAGIC)];
 	extern char* imalloc_StrErrorMessages[IMALLOC_ERRORCODES_COUNT];
 	extern char* imalloc_StrArrayTypes[IMALLOC_ARRAYTYPES_COUNT];
 	extern uint8_t imalloc_ElementSizeArrayTypes[IMALLOC_ARRAYTYPES_COUNT];
 
+    typedef struct blockheader_tag {
+		size_t headersize;
+		size_t size;
+		//imalloc_arrayType_t type;
+		void* thisptr;
+		char magic[sizeof(defaultMagicStr)-1];
+	} blockheader_t;
+
+    #define BLOCKHEADER_SIZE sizeof(blockheader_t)
+
+    extern blockheader_t defaultblockheader;
 #endif

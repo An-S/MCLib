@@ -12,7 +12,7 @@ typedef struct sllIterator_tag{
 	sllIterator_Pos_t currentPos;
 	stringlist_SingleEntry_t *elemPtr;
 	sllIterator_Direction_t direction;
-}sllIterator_t;
+};
 
 sllIterator_t* sllIterator_alloc(void);
 sllIterator_Direction_t sllIterator_getDir(sllIterator_t *it);
