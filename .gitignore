@@ -22,3 +22,5 @@
 *.session
 *.stefan
 *.log
+*.lib
+*.lst

@@ -394,7 +394,6 @@
 		<Unit filename="StringLinkedList/StringLinkedListIterator/testsrc/main.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
-			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="StringLinkedList/StringLinkedList_internal.h">
 			<Option target="lib" />
@@ -402,17 +401,14 @@
 		</Unit>
 		<Unit filename="StringLinkedList/TestStringLinkedList/TestStringLinkedList.h">
 			<Option target="lib" />
-			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="StringLinkedList/TestStringLinkedList/main.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
-			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="StringLinkedList/main.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
-			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="StringLinkedList/malloctest.c">
 			<Option compilerVar="CC" />
@@ -635,7 +631,6 @@
 		<Unit filename="malloc_and_co/MCLib_malloc.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
-			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="malloc_and_co/MCLib_malloc.h">
 			<Option target="lib" />
@@ -727,12 +722,10 @@
 		</Unit>
 		<Unit filename="trigFunctions/MCLib_trigFunctions.h">
 			<Option target="lib" />
-			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="trigFunctions/createSin.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
-			<Option target="libcc65" />
 		</Unit>
 		<Extensions>
 			<code_completion />
