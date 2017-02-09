@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="../StringLinkedListDbg" prefix_auto="1" extension_auto="1" />
+				<Option output="StringLinkedListDbg" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="obj/Debug/" />
 				<Option type="2" />
@@ -16,13 +16,14 @@
 				<Compiler>
 					<Add option="-Wall" />
 					<Add option="-g" />
+					<Add option="-fplan9-extensions --std=gnu11" />
 				</Compiler>
 				<Linker>
-					<Add library="..\libMallocWrapperDbg.a" />
+					<Add library="../libMallocWrapperDbg.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="../StringLinkedList" prefix_auto="1" extension_auto="1" />
+				<Option output="StringLinkedList" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="obj/Release/" />
 				<Option type="2" />
@@ -31,13 +32,29 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-Wall" />
+					<Add option="-fplan9-extensions --std=gnu11" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="..\libMallocWrapper.a" />
+					<Add library="../libMallocWrapper.a" />
 				</Linker>
 			</Target>
+			<Target title="test">
+				<Option output="StringLinkedList" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-fplan9-extensions --std=gnu11" />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="StringLinkedList.exe" />
+				</ExtraCommands>
+			</Target>
 		</Build>
+		<VirtualTargets>
+			<Add alias="all" targets="Debug;Release;test;" />
+		</VirtualTargets>
 		<Compiler>
 			<Add directory="C:/Users/Stefan/Documents/Programmieren/EigeneCProgramme/MyCLib" />
 		</Compiler>
@@ -47,6 +64,73 @@
 		<Unit filename="StringLinkedList.h" />
 		<Unit filename="StringLinkedList_internal.h" />
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+			<Option target="test" />
+		</Unit>
+		<Unit filename="src/stringlist_Create.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_InitElem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_addEnd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_createEmptyElem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_decElemCnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_free.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getElemCnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getFirst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getLast.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getMaxElemCnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getNext.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getPrev.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_getString.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_incElemCnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_removeEnd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_removeStart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_setFirstPtr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_setLastPtr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_setMaxElemCnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_setNextPtr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stringlist_setPrevPtr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="testsrc/assertHeadOK.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

@@ -1,0 +1,7 @@
+#include "MCLib_Range.h"
+/*
+bool MCLib_createRange(const void *lb, const void *ub, MCLib_RangeLimits_t limits){
+    return cmp(lb, val) && cmp(val, ub);
+}
+*/
+

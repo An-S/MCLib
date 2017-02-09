@@ -48,11 +48,11 @@ void* imalloc(size_t size){
 }
 
 void* irealloc(void* ptr, size_t size){
-	void* sptr = NULL;
+
 	unsigned int newblocksize = getBlockSizeIncludingHeaderAndEndmarker(size);
 
 	if (NULL != ptr){
-		sptr = (uint8_t*)ptr-sizeof(blockheader_t);
+        void* sptr = (uint8_t*)ptr-sizeof(blockheader_t);
 		unsigned int alloclistpos = checkalloclist(sptr);
 		if ((unsigned)~0 == alloclistpos){
 			imalloc_setError(IMALLOCERR_PTRNOTFOUNDINALLOCLIST);
@@ -75,7 +75,11 @@ void* irealloc(void* ptr, size_t size){
 
 		//3. move end marker to new end	-> OK
 		//4. erase old end marker
-		imalloc_alloclistUpdateEntry(ptr-sizeof(blockheader_t),sptr);//Overwrite old entry with new address
+		imalloc_alloclistUpdateEntry(ptr-
+
+                               BLOCKHEADER_SIZE*
+                               sizeof(char)
+                               ,sptr);//Overwrite old entry with new address
 		//The UpdateEntry sub checks structure a second time as changes were made
 
 		return (uint8_t*)sptr+sizeof(blockheader_t);

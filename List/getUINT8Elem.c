@@ -1,8 +1,8 @@
 #include "../MCLib.h"
 
-void testfunc();
+/*void testfunc();
 void testfunc(int a, int b){
-}
+}*/
 
 /** \brief controls access to lists (1d arrays) with following possibilities
  *

@@ -28,6 +28,8 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-Wextra" />
+					<Add directory="StringLinkedList/StringLinkedListIterator/include" />
+					<Add directory="StringLinkedList" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -84,6 +86,23 @@
 					<Add library="libMCLib.a" />
 				</Linker>
 			</Target>
+			<Target title="libcc65">
+				<Option output="MCLib.lib" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/cc65Release" />
+				<Option type="2" />
+				<Option compiler="cc65" />
+				<Option projectCompilerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Compiler>
+					<Add option="-O --cpu 6502x" />
+					<Add directory="StringLinkedList/StringLinkedListIterator/include" />
+					<Add directory="StringLinkedList" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
@@ -96,36 +115,61 @@
 		<Unit filename="Comparison/comparison.h">
 			<Option target="lib" />
 			<Option target="testRange" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="Comparison/lessthan.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testRange" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="Comparison/lessthanChar.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="Comparison/lessthanOrEq.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testRange" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="Comparison/lessthanOrEqStr.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testRange" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="Comparison/lessthanStr.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testRange" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="Conversion/MCLib_Bytes2Bits.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Conversion/MCLib_Char2Bits.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Conversion/MCLib_Int2Bits.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Conversion/conversion.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="Counter/Counter.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testCounter" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="Counter/Counter.h">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testCounter" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="Counter/Counter_internal.h">
 			<Option compilerVar="CC" />
@@ -135,64 +179,99 @@
 			<Option compilerVar="CC" />
 			<Option target="testCounter" />
 		</Unit>
+		<Unit filename="FileIO/fileIO.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="FileIO/fileIO_openWriteBinary.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="FileIO/fileIO_standardErrHandler.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="FileIO/fileIO_writeBinary.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="FileIO/writeFile.c">
+			<Option compilerVar="CC" />
+			<Option target="libcc65" />
+		</Unit>
 		<Unit filename="List/MCLib_List.h">
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/fprintIntElem.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/fprintlist.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/getUINT16Elem.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/getUINT8Elem.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/printCharElem.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/printIntElem.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/printStringElem.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/printUInt16Elem.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/printUInt8Elem.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/printlist.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/rememberPointer.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="List/testPrintList.c">
 			<Option compilerVar="CC" />
@@ -202,11 +281,13 @@
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
 			<Option target="testList" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/defaultMarkers.c">
 			<Option compilerVar="CC" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc.c">
 			<Option compilerVar="CC" />
@@ -217,52 +298,309 @@
 			<Option compilerVar="CC" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_alloclistAccessFunctions.c">
 			<Option compilerVar="CC" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_arraytypes.c">
 			<Option compilerVar="CC" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_basicTests.c">
 			<Option compilerVar="CC" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_blockheader.c">
 			<Option compilerVar="CC" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_blockstructure.c">
 			<Option compilerVar="CC" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_errorMessages.c">
 			<Option compilerVar="CC" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_helperfunctions.c">
 			<Option compilerVar="CC" />
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_helperfunctions.h">
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="MallocWrapper/imalloc_internal.h">
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedList.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedList.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/include/sllIterator.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/include/sllIterator_internal.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_alloc.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_conditionallyGetNextPrev.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_create.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_get.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_getDir.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_getPos.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_proceed.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_retreat.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/src/slliterator_set.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedListIterator/testsrc/main.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/StringLinkedList_internal.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/TestStringLinkedList/TestStringLinkedList.h">
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/TestStringLinkedList/main.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/main.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="StringLinkedList/malloctest.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/multilinemac.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_Create.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_InitElem.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_addEnd.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_createEmptyElem.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_decElemCnt.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_free.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getElemCnt.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getFirst.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getLast.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getMaxElemCnt.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getNext.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getPrev.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_getString.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_incElemCnt.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_removeEnd.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_removeStart.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_setFirstPtr.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_setLastPtr.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_setMaxElemCnt.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_setNextPtr.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/src/stringlist_setPrevPtr.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="StringLinkedList/testsrc/assertHeadOK.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProvider.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProvider.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderDelete.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderGetNextChar.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderNew.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderRestart.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderSetBuffer.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderTestIsOver.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProvider_internal.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="constStdStr/MCLib_constStdStr.h">
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="constStdStr/alltests.c">
 			<Option compilerVar="CC" />
@@ -271,22 +609,32 @@
 		<Unit filename="constStdStr/constStr_NULLuc.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="constStdStr/constStr_TRUE.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="constStdStr/constStr_empty.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="constStdStr/constStr_falselc.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="constStdStr/constStr_falseuc.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="constStdStr/constStr_zero.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="constStdStr/main.c">
 			<Option compilerVar="CC" />
@@ -295,36 +643,43 @@
 		<Unit filename="constStdStr/trueStr.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="intmath/absdiff.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="intmath/gcd.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="intmath/intmath.h">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="intmath/lcm.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="intmath/max.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="intmath/min.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testIntMath" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="intmath/testIntMath.c">
 			<Option compilerVar="CC" />
@@ -333,19 +688,34 @@
 		<Unit filename="io/countCallsAndSelectChar.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="malloc_and_co/MCLib_malloc.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+		</Unit>
+		<Unit filename="malloc_and_co/MCLib_malloc.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
 		<Unit filename="range/MCLib_Range.h">
 			<Option target="lib" />
 			<Option target="testRange" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="range/MCLib_createRange">
+			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="range/chkIntRng.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testRange" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="range/chkRng.c">
 			<Option compilerVar="CC" />
@@ -354,6 +724,7 @@
 			<Option target="testList" />
 			<Option target="testIntMath" />
 			<Option target="testRange" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="range/testRange.c">
 			<Option compilerVar="CC" />
@@ -362,25 +733,63 @@
 		<Unit filename="stdheaders.h">
 			<Option target="MallocWrapper" />
 			<Option target="lib" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="strings/MCLib_getFieldwidthFromFormatString.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="testStrings" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="strings/MCLib_randstr.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="strings/MCLib_stralloc.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="strings/MCLib_strcat.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="strings/MCLib_strcopy.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="strings/MCLib_strfree.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="strings/MCLib_strleft.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="testStrings" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="strings/McLib_strings.h">
 			<Option target="lib" />
 			<Option target="testStrings" />
+			<Option target="libcc65" />
 		</Unit>
 		<Unit filename="strings/testStrings.c">
 			<Option compilerVar="CC" />
 			<Option target="testStrings" />
 		</Unit>
-		<Unit filename="trigFunctions/createSin.c">
-			<Option compilerVar="CC" />
+		<Unit filename="trigFunctions/MCLib_trigFunctions.h">
 			<Option target="lib" />
 		</Unit>
-		<Unit filename="trigFunctions/trigFunctions.h">
+		<Unit filename="trigFunctions/createSin.c">
 			<Option compilerVar="CC" />
 			<Option target="lib" />
 		</Unit>

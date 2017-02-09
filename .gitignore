@@ -14,3 +14,13 @@
 *.layout
 *.db
 *.prg
+*.tags
+*.cproject
+*.prefs
+*.project
+*.save-failed
+*.session
+*.stefan
+*.log
+*.lib
+*.lst

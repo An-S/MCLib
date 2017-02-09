@@ -5,6 +5,7 @@
 
 typedef int MCLib_counterValue_t;
 typedef struct MCLib_counter_tag MCLib_counter_t;
+
 typedef enum {
 	MCLIBCOUNTER_ONESHOT,
 	MCLIBCOUNTER_CONTINUOUES,
