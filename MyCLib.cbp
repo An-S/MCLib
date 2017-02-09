@@ -179,6 +179,29 @@
 			<Option compilerVar="CC" />
 			<Option target="testCounter" />
 		</Unit>
+		<Unit filename="FileIO/fileIO.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="FileIO/fileIO_openWriteBinary.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="FileIO/fileIO_standardErrHandler.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="FileIO/fileIO_writeBinary.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="FileIO/writeFile.c">
+			<Option compilerVar="CC" />
+			<Option target="libcc65" />
+		</Unit>
 		<Unit filename="List/MCLib_List.h">
 			<Option target="lib" />
 			<Option target="testList" />
@@ -529,6 +552,49 @@
 		</Unit>
 		<Unit filename="StringLinkedList/testsrc/assertHeadOK.c">
 			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProvider.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProvider.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderDelete.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderGetNextChar.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderNew.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderRestart.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderSetBuffer.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderTestIsOver.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProvider_internal.h">
 			<Option target="lib" />
 			<Option target="libcc65" />
 		</Unit>
