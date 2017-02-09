@@ -1,10 +1,10 @@
 #ifndef STRINGLINKEDLIST_INTERNAL_H_INCLUDED
 #define STRINGLINKEDLIST_INTERNAL_H_INCLUDED
 
-#include <MallocWrapper\imalloc.h>
-#include <MallocWrapper\imalloc_helperfunctions.h>
+#include <MallocWrapper/imalloc.h>
+#include <MallocWrapper/imalloc_helperfunctions.h>
 
-#include <ModuleTestSupportLib\ModuleTestSupportLib.h>
+#include <ModuleTestSupportLib/ModuleTestSupportLib.h>
 
 #include <MCLib.h>
 #include "StringLinkedList.h"

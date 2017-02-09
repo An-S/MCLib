@@ -1,4 +1,4 @@
-#include "MCLib_strings.h"
+#include <strings/MCLib_strings.h>
 
 char *MCLib_randstrLen(uint8_t len, char cmin, char cmax){
 	//allocate space of random string with length "len"
