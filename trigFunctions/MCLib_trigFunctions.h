@@ -1,7 +1,7 @@
 #ifndef TRIGFUNCTIONS_H_INCLUDED
 #define TRIGFUNCTIONS_H_INCLUDED
 
-#include <mclib.h>
+#include <MCLib.h>
 #include <math.h>
 
 typedef int MCLib_sinelem_t;

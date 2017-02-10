@@ -1,4 +1,4 @@
-#include "MCLib_trigFunctions.h"
+#include "trigFunctions.h"
 
 MCLib_sintable_t *MCLib_createSin(size_t len, MCLib_sinelem_t min, MCLib_sinelem_t max, size_t N){
     size_t i;

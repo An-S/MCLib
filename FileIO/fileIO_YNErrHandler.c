@@ -1,5 +1,5 @@
 #include "fileIO.h"
-int fileIO_YNErrH(char *format, va_list va){
+int fileIO_overwriteYNErrH(char *format, va_list va){
 	char ch;
 
 	fileIO_stdErrH(format, va);

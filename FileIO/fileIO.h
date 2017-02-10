@@ -11,5 +11,6 @@ int fileIO_writeBinary(char *path, void *buf, size_t N, fileIO_ErrH_t *errH);
 int fileIO_callErrorHandler(fileIO_ErrH_t *errH, char* format, ...);
 int fileIO_stdErrH(char *format, va_list va);
 int fileIO_YNErrH(char *format, va_list va);
+int fileIO_overwriteYNErrH(char *format, va_list va);
 
 #endif // FILEIO_H_INCLUDED
