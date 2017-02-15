@@ -4,13 +4,19 @@
 #include <stdheaders.h>
 #include <ctype.h>
 
-typedef int fileIO_ErrH_t(char* format, va_list va);
+typedef int fileIO_ErrH_t(char* params, char* format, va_list va);
+typedef struct fileIO_errHParams_tag{
+    char * filename;
+    uint8_t verbosity; //pass some numeric code to indicate desired verbosity of error output
+} errHParams_t;
 
-FILE *fileIO_openBinaryWrite(char *path, fileIO_ErrH_t *errH);
-int fileIO_writeBinary(char *path, void *buf, size_t N, fileIO_ErrH_t *errH);
-int fileIO_callErrorHandler(fileIO_ErrH_t *errH, char* format, ...);
-int fileIO_stdErrH(char *format, va_list va);
-int fileIO_YNErrH(char *format, va_list va);
-int fileIO_overwriteYNErrH(char *format, va_list va);
+extern char fileIO_errH_SILENT[];
+
+FILE *fileIO_openBinaryWrite(char *path, fileIO_ErrH_t *errH, fileIO_ErrH_t *errH_FExisting);
+int fileIO_writeBinary(char *path, void *buf, size_t N, fileIO_ErrH_t *errH, fileIO_ErrH_t *errH_FExisting);
+int fileIO_callErrorHandler(char *params, fileIO_ErrH_t *errH, char* format, ...);
+int fileIO_stdErrH(char *params, char *format, va_list va);
+int fileIO_YNErrH(char *params, char *format, va_list va);
+int fileIO_overwriteYNErrH(char *params, char *format, va_list va);
 
 #endif // FILEIO_H_INCLUDED
