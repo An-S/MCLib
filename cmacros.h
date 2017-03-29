@@ -4,6 +4,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#define WITH(ptr) __AX__=(uintptr_t)ptr,asm("sta ptr1"), asm("stx ptr1+1")
+#define SETB(ptr, field, value) __AX__ = value, asm("ldy #%b", offsetof(ptr, field)), \
+    asm("sta (ptr1),y")
+#define SETW(ptr, field, value) __AX__ = (unsigned int)value, asm("ldy #%b", offsetof(ptr, field)), \
+    asm("sta (ptr1),y"), \
+    asm("txa"), asm("iny"), asm("sta (ptr1),y")
+
 #define MAX(x,y) ( (x)<(y)?(y):(x))
 #define MIN(x,y) ( (x)<(y)?(x):(y))
 #define ABS(x) ( (x)<0?(-x):(x))

@@ -5,7 +5,7 @@
 		<Option title="MyCLib" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="WinAPI/;" />
+		<Option virtualFolders="WinAPI\;" />
 		<Build>
 			<Target title="MallocWrapper">
 				<Option output="../MyCLib" prefix_auto="1" extension_auto="1" />
@@ -180,6 +180,11 @@
 			<Option target="testCounter" />
 		</Unit>
 		<Unit filename="FileIO/fileIO.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="FileIO/fileIO_ErrHSILENT.c">
+			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="libcc65" />
 		</Unit>
@@ -560,7 +565,42 @@
 			<Option target="lib" />
 			<Option target="libcc65" />
 		</Unit>
+		<Unit filename="TextProvider/TextProvider.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
 		<Unit filename="TextProvider/TextProvider.h">
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderDelete.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderGetNextChar.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderNew.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderRestart.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderSetBuffer.c">
+			<Option compilerVar="CC" />
+			<Option target="lib" />
+			<Option target="libcc65" />
+		</Unit>
+		<Unit filename="TextProvider/TextProviderTestIsOver.c">
+			<Option compilerVar="CC" />
 			<Option target="lib" />
 			<Option target="libcc65" />
 		</Unit>
